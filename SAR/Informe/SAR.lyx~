@@ -104,7 +104,7 @@ El algoritmo de búsqueda binaria es un algoritmo que permite encontrar un
 \begin_inset Formula $V_{b}$
 \end_inset
 
- dentro de un conjunto discreto de valores 
+ dentro de un conjunto discreto y ordenado de valores 
 \begin_inset Formula $V_{set}$
 \end_inset
 
@@ -114,7 +114,549 @@ El algoritmo de búsqueda binaria es un algoritmo que permite encontrar un
 \begin_inset Formula $V_{set}$
 \end_inset
 
- por cada comparación.
+ por cada comparación realizada.
+\end_layout
+
+\begin_layout Standard
+El algortimo compara el valor objetivo al elemento medio de 
+\begin_inset Formula $V_{set}$
+\end_inset
+
+ según el ordenamiento utlizado.
+ En caso de no resultar iguales,, el algoritmo elimina la mitad derecha
+ 
+\begin_inset Formula $V_{subDer}$
+\end_inset
+
+ o la mitad izquierda 
+\begin_inset Formula $V_{subIzq}$
+\end_inset
+
+ de los elementos de 
+\begin_inset Formula $V_{set}$
+\end_inset
+
+c omo posibles valores 
+\begin_inset Formula $V_{b}$
+\end_inset
+
+ según el resultado anterior de la comparación con el elemento medio y continúa
+ realizando la comparación con el elemento de la mitad del subconjunto restante
+ hasta que encuentre el elemento 
+\begin_inset Formula $V_{b}$
+\end_inset
+
+ o el nuevo subconjunto 
+\begin_inset Formula $V_{sub}\subseteq V_{set}$
+\end_inset
+
+ tiene un único elemento que no es 
+\begin_inset Formula $V_{b}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Luego de ejecutado el algoritmo, se obtendrán dos posibles resultados:
+\end_layout
+
+\begin_layout Enumerate
+Se obtiene el valor 
+\begin_inset Formula $V_{b}$
+\end_inset
+
+ buscado, como se mencionó anteriormente.
+\end_layout
+
+\begin_layout Enumerate
+Se obtiene un valor 
+\begin_inset Formula $V_{ob}$
+\end_inset
+
+ no igual a 
+\begin_inset Formula $V_{b}$
+\end_inset
+
+ tal que 
+\begin_inset Formula $V_{ob}\epsilon V_{sub}$
+\end_inset
+
+ que resulta ser el elemento perteneciente a 
+\begin_inset Formula $V_{set}$
+\end_inset
+
+ que más se acerque al valor buscado, ya sea por izquierda o por derecha.
+\end_layout
+
+\begin_layout Subsection
+Modelo y funcionalidad general del conversor
+\end_layout
+
+\begin_layout Standard
+El esquema general de un conversor SAR de 8 bits es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imágenes/sar_converter.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conversor SAR
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se procede a explicar la implementación del algoritmo de búsqueda binaria
+ para lograr convertir la tensión de entrada analógica 
+\begin_inset Quotes eld
+\end_inset
+
+Señal Analógica
+\begin_inset Quotes erd
+\end_inset
+
+, ahora en más denominada 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $V_{a}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ a un valor digital apropiado 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $V_{d}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+La señal analógica 
+\begin_inset Formula $V_{a}$
+\end_inset
+
+ pasará por un sample and hold que logrará retener un cierto valor de la
+ señal cada un intervalo de tiempo bien definido 
+\begin_inset Formula $\tau$
+\end_inset
+
+, como se explica en el Trabajo Práctico 1.
+ Denominaremos al valor muestreado en el tiempo 
+\begin_inset Formula $t_{o}$
+\end_inset
+
+ como 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+, el cual será mantenido por un intervalo temporal 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+El módulo 
+\begin_inset Quotes eld
+\end_inset
+
+Lógica SAR
+\begin_inset Quotes erd
+\end_inset
+
+ es el encargado de implementar la lógica del algoritmo de búsqueda binaria:
+ El mismo decidirá con qué valor inicial comparar la señal analógica (el
+ 
+\begin_inset Quotes eld
+\end_inset
+
+elemento medio
+\begin_inset Quotes erd
+\end_inset
+
+, como se mencionó en la explicación del algoritmo) para finalmente obtener
+ 
+\begin_inset Formula $V_{d}$
+\end_inset
+
+.
+ Comenzará con un valor digital tentativo 
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+ es convertido a valor analógico 
+\begin_inset Formula $V_{a}'$
+\end_inset
+
+ mediante el uso de un DAC.
+\end_layout
+
+\begin_layout Enumerate
+El comparador arrojará un valor lógico que indica si 
+\begin_inset Formula $V_{a}'$
+\end_inset
+
+ es menor, mayor o igual a 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+.
+ Este valor lógico retornará al módulo lógico para que el mismo obtenga
+ el nuevo valor tentativo 
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+ y se continúe comparando hasta que se llegue al final de la conversión/búsqueda
+ (EOC), en cuyo caso se 
+\begin_inset Formula $V_{a}'$
+\end_inset
+
+ resulta ser el valor igual o más cercano a 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+ y por ende se deduce que el 
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+ asociado resulta ser la representación digital de la entrada, lográndose
+ así convertir la señal analógica a la digital para toda muestra.
+\end_layout
+
+\begin_layout Subsection
+Implementación de la lógica digital para la búsqueda binaria
+\end_layout
+
+\begin_layout Standard
+Únicamente para los efectos de este conversor, se tomará la convención de
+ que un bit 
+\begin_inset Quotes eld
+\end_inset
+
+apagado
+\begin_inset Quotes erd
+\end_inset
+
+ será equivalente a un 0 lógico mientras que un bit 
+\begin_inset Quotes eld
+\end_inset
+
+prendido
+\begin_inset Quotes erd
+\end_inset
+
+ será equivalente a un 1 lógico.
+\end_layout
+
+\begin_layout Standard
+Por cuestiones notacionales, se numerará a los bits en forma creciente,
+ siendo el bit más significativo el bit 
+\begin_inset Formula $b_{0}$
+\end_inset
+
+ y el menos significativo el bit 
+\begin_inset Formula $b_{N-1}$
+\end_inset
+
+, siguiendo la siguiente figura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imágenes/bits_notacion.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Notación para los bits
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se elige que la representación binaria/digital de la tensión de entrada
+ que se almacene en el módulo lógico luego de finalizada la conversión asocie
+ su valor mínimo a todos sus bits apagados y su valor máximo a todos sus
+ bits prendidos, lo que se correspondería con una representación positiva
+ (no admitiría números negativos) de los números.
+ Esto se debe a que muchos DACs interpretan su input digital de la misma
+ forma.
+ Además, la lógica utilizada para implementar el algoritmo resulta ser más
+ fácil de escribir de esta manera.
+\end_layout
+
+\begin_layout Standard
+Se considera ahora al arreglo de N bits que es la salida del módulo lógico
+ (en nuestro caso, N=8) como el arreglo en el cual se realizará la búsqueda
+ del valor 
+\begin_inset Formula $V_{d}$
+\end_inset
+
+, es decir, los todos los números que son representables con N bits formarán
+ el conjunto 
+\begin_inset Formula $V_{set}$
+\end_inset
+
+.
+ El valor medio inicial de este conjunto estará dado por el bit más significativ
+o prendido y el resto apagado.
+\end_layout
+
+\begin_layout Standard
+El algoritmo procederá haciendo un análisis 
+\begin_inset Quotes eld
+\end_inset
+
+bit a bit
+\begin_inset Quotes erd
+\end_inset
+
+ y es por eso que denominamos 
+\begin_inset Formula $b_{a}$
+\end_inset
+
+ al bit que está siendo analizado, es decir, al bit para el cual se está
+ decidiendo si deberá prenderse o apagarse para lograr el valor 
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+ final correcto.
+ De lo anterior, inicialmente 
+\begin_inset Formula $b_{a}=b_{0}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(1) Al convertir el valor tentativo digital dado por el estado actual de
+ los N bits a analógico y luego comparar con la tensión de entrada retenida
+ (el resultado de la comparación será recibido por el pin CMP_IN de la figura)
+ como se explicó en la subsección anterior, se seguirá la siguiente regla
+ de decisión:
+\end_layout
+
+\begin_layout Itemize
+Si el valor tentativo resulta menor al de entrada 
+\begin_inset Formula $V_{a}$
+\end_inset
+
+, el bit 
+\begin_inset Formula $b_{a}$
+\end_inset
+
+ deberá prenderse.
+\end_layout
+
+\begin_layout Itemize
+Si el valor tentativo resulta mayor al de entrada 
+\begin_inset Formula $V_{a}$
+\end_inset
+
+, el bit 
+\begin_inset Formula $b_{a}$
+\end_inset
+
+ deberá apagarse.
+\end_layout
+
+\begin_layout Standard
+Luego, si 
+\begin_inset Formula $a\neq N-1$
+\end_inset
+
+, se elige incremente el índice 
+\begin_inset Formula $a$
+\end_inset
+
+ y se vuelve a realizar la comparación, volviendo al punto (1).
+\end_layout
+
+\begin_layout Standard
+Al terminar el ciclo iterativo, la configuración en la que se encuentran
+ los N bits será el valor 
+\begin_inset Formula $V_{d}'$
+\end_inset
+
+, que convertido a analógico estará más cercano al valor de la entrada 
+\begin_inset Formula $V_{a}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cabe aclarar que cada iteración será realizada en un ciclo de clock interno
+ del módulo lógico, que será menor en duración al intervalo temporal 
+\begin_inset Formula $\tau$
+\end_inset
+
+ durante el cual se retiene la muestra tomada en el instante 
+\begin_inset Formula $t_{o}$
+\end_inset
+
+, ya denominada 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+.
+ Sin embargo, estos dos tiempos estarán íntimamente relacionados y es por
+ eso que los tiempos de muestreo y retención del sample and hold estarán
+ también manejados por el módulo lógico.
+\end_layout
+
+\begin_layout Standard
+Esta afirmación y la relación entre tiempos serán explicadas con detalle
+ en la siguiente subsección.
+\end_layout
+
+\begin_layout Subsection
+Interacción temporal entre los distintos componentes
+\end_layout
+
+\begin_layout Standard
+Por cuestiones notacionales definimos a 
+\begin_inset Formula $t_{c}$
+\end_inset
+
+ como el tiempo que dura un ciclo de clock, es decir, el tiempo durante
+ el cual la señal de clock se mantiene en un estado lógico constante 0 ó
+ 1.
+\end_layout
+
+\begin_layout Standard
+El módulo lógico no resulta independiente del funcionamiento del resto de
+ los componentes que forman parte del conversor en cuanto a cuestiones temporale
+s.
+ Se irá caso por caso, llamando la atención sobre los factores y tiempos
+ a tener en cuenta.
+\end_layout
+
+\begin_layout Subsubsection
+Interacción entre módulo lógico y Sample and Hold
+\end_layout
+
+\begin_layout Standard
+La dependencia entre tiempos de componentes se debe principalmente a que
+ la implementación del algoritmo de búsqueda mencionada anteriormente depende
+ de que 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+ se mantenga constante durante las N iteraciones que tiene que realizar
+ el módulo lógico para poder convertir el valor 
+\begin_inset Formula $V_{a}(t_{o})$
+\end_inset
+
+ a digital.
+ Para que esto último suceda, el tiempo por el cual se retiene una muestra
+ tiene que ser, como condición necesaria pero no suficiente, mayor al tiempo
+ en que tarda el módulo lógico en realizar N iteraciones de comparación
+ (
+\begin_inset Formula $N\cdot t_{c}<\tau$
+\end_inset
+
+).
+ Además, las N iteraciones tienen que realizarse sobre la misma muestra,
+ por lo que la señal de clock y el tiempo en el que se comienza a iterar
+ tienen que estar sincronizados con la señal de Sample y de Hold de manera
+ tal que sólo se comience a iterar cuando se comenzó el tiempo de hold de
+ una muestra.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, en la práctica es necesario pedir una condición extra cuando
+ se habla de la interacción específica entre S&H y módulo lógico, y es que
+ hay que tener en cuenta los tiempos de establecimiento de la muestra cuando
+ es retenida por el S&H.
+ Es por esto que se podrá comenzar a iterar sobre la muestra únicamente
+ cuando la muestra retenida ya se ha establecido, por lo que si llamamos
+ a este tiempo de establecimiento 
+\begin_inset Formula $t_{e}$
+\end_inset
+
+ resulta ser que 
+\begin_inset Formula $N\cdot t_{c}\text{+}t_{e}<\tau$
+\end_inset
+
+
 \end_layout
 
 \end_body
