@@ -656,7 +656,111 @@ Sin embargo, en la práctica es necesario pedir una condición extra cuando
 \begin_inset Formula $N\cdot t_{c}\text{+}t_{e}<\tau$
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Subsubsection
+Interacción con el DAC
+\end_layout
+
+\begin_layout Standard
+Por cada iteración, el DAC tendrá que convertir el valor digital tentativo
+ a un valor analógico para luego poder comparar ese valor con la entrada.
+ La respuesta del DAC en tiempo no es ideal (nula), sino que tiene un valor
+ definido por el intergrado o circuito a utilizar.
+ Cada iteración tendrá que esperar un tiempo 
+\begin_inset Formula $t_{dac}$
+\end_inset
+
+ de respuesta del conversor DAC para poder recibir la respuesta de comparación
+ y así poder decidir el valor del bit actualmente analizado.
+ Es de aquí que se agrega esta condición para las N iteraciones que se realizan
+ dentro de un tiempo de hold.
+\end_layout
+
+\begin_layout Standard
+De aquí, 
+\begin_inset Formula $N\cdot t_{c}+t_{e}+N\cdot t_{dac}<\tau$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interacción con el comparador
+\end_layout
+
+\begin_layout Standard
+El tiempo de respuesta del comparador ha de ser tenido en cuenta.
+ Dado que la salida del comparador sólo será observada durante el tiempo
+ en que el S&H está en estado Hold y luego de pasado el tiempo de establecimient
+o del mismo, entonces se deberá sumar el tiempo de respuesta del comparador
+ a la condición para el tiempo de clock.
+ De esta manera, llamando 
+\begin_inset Formula $t_{comp}$
+\end_inset
+
+ al tiempo de respuesta del comparador, obtenemos 
+\begin_inset Formula $N\cdot t_{c}+t_{e}+N\cdot(t_{dac}+t_{comp})<\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Condición de Clock resultante
+\end_layout
+
+\begin_layout Standard
+Luego de establecidas las condiciones a tener en cuenta y habiendo llegado
+ a la expresión:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $N\cdot t_{c}+t_{e}+N\cdot(t_{dac}+t_{comp})<\tau$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos despejar la condición para el tiempo máximo en el que el clock realiza
+ un ciclo como:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $t_{c}<\frac{\tau-t_{e}}{N}-t_{dac}-t_{comp}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este tiempo máximo tendrá asociada un frecuencia mínima de clock dada por:
+\end_layout
+
+\begin_layout Standard
+Nos preguntamos luego cómo definir el tiempo de Hold para que el sistema
+ funcione correctamente.
+ El tiempo que impondrá las condiciones para el tiempo de clock será el
+ tiempo de sample en este caso, ya que el integrado de sample and hold tendrá
+ un tiempo de acquisición mínimo que deberá cumplirse y es más restrictivo
+ que el tiempo de establecimiento del hold.
+\end_layout
+
+\begin_layout Standard
+Dada la máxima frecuencia de
+\end_layout
+
+\begin_layout Subsection
+Implementación física del módulo lógico
+\end_layout
+
+\begin_layout Standard
+Se decidió implementar al módulo lógico mediante el uso de una FPGA, programándo
+la con el uso de Quartus II.
 \end_layout
 
 \end_body
