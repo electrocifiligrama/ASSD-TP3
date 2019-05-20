@@ -11,8 +11,18 @@ module PseudoPll_tb;
  PseudoPll inst(clk_in,freq_param ,clk_out);
 
  initial begin
+   freq_param= 0;
+   #5;
+   freq_param= 50;
+   #5;
    freq_param= 100;
-   #30;
+   #5;
+   freq_param= 150;
+   #5;
+   freq_param= 200;
+   #5;
+   freq_param= 255;
+   #5;
    $finish;
  end
 

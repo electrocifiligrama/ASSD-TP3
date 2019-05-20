@@ -12,7 +12,7 @@ module PseudoPll(
 //Parametros
 parameter F_CLK_MIN = 6000;
 parameter F_CLK_MAX = 100000;
-parameter MIN_CLK_STEP =(F_CLK_MAX-F_CLK_MIN)/256;
+parameter MIN_CLK_STEP =(F_CLK_MAX-F_CLK_MIN)/255;
 
 input wire clk_in;
 input wire [7:0] freq_param;
