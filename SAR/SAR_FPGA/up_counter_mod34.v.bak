@@ -1,0 +1,17 @@
+module up_counter_33(input clk, reset, output[5:0] counter);
+reg [5:0] counter_up;
+
+// up counter
+always @(posedge clk or posedge reset) begin
+
+	if(reset) begin
+		counter_up <= 5'd0;
+	end else begin
+		counter_up <= counter_up + 5'd1;
+		if (counter_up == 5b'10001) begin
+			counter_up <= 5'd0;
+		end 
+	end 
+	assign counter = counter_up;
+end 
+endmodule

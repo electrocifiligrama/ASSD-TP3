@@ -596,9 +596,7 @@ Por cuestiones notacionales definimos a
 \begin_inset Formula $t_{c}$
 \end_inset
 
- como el tiempo que dura un ciclo de clock, es decir, el tiempo durante
- el cual la señal de clock se mantiene en un estado lógico constante 0 ó
- 1.
+ como el tiempo que dura un ciclo de clock.
 \end_layout
 
 \begin_layout Standard
@@ -738,7 +736,12 @@ Podemos despejar la condición para el tiempo máximo en el que el clock realiza
 \end_layout
 
 \begin_layout Standard
-Este tiempo máximo tendrá asociada un frecuencia mínima de clock dada por:
+Este tiempo máximo tendrá asociada un frecuencia mínima de clock dada por
+ 
+\begin_inset Formula $f=\frac{1}{T}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -780,7 +783,7 @@ Llamando a su vez
 \begin_inset Formula $t_{sar}$
 \end_inset
 
- es el tiempo en el que se realiza las iteraciones:
+ es el tiempo en el que se realizan las iteraciones:
 \end_layout
 
 \begin_layout Standard
@@ -842,25 +845,162 @@ Requerimos utilizar el menor tiempo de sample posible, por lo que utilizando
 \begin_inset Formula $\tau=T_{H}=0.55\cdot T_{m}\approx12.5\mu s$
 \end_inset
 
+ para el caso extremo.
+\end_layout
+
+\begin_layout Standard
+Luego, denominando 
+\begin_inset Formula $T_{it}=T_{H}-t_{e}$
+\end_inset
+
+ al tiempo en el que se realizarán las N iteraciones, nos damos cuenta que
+ si 
+\begin_inset Formula $T_{it}\geq N\cdot(t_{dac}+t_{comp})+t_{sar}=N\cdot(t_{dac}+t_{comp}+t_{c})$
+\end_inset
+
+, entonces el sistema podrá realizar la conversión correctamente.
+\end_layout
+
+\begin_layout Standard
+Pero esta condición no resulta suficiente en el caso práctico, porque digitalmen
+te se esperará generar el registro de N bits para próximo valor tentativo
+ y luego realizar la conversión de digital a analógico y la comparación
+ correspondiente, pero en ciclos de clock en vez de un tiempo continuo interrump
+ido.
+ Verificamos que si 
+\begin_inset Formula $t_{dac}+t_{comp}<<t_{c}$
+\end_inset
+
+ (en la práctica con perdir 
+\begin_inset Formula $t_{dac}+t_{comp}<0.5\cdot t_{c}$
+\end_inset
+
+ esta condición se cumple), el proceso entero de generar, convertir y comparar
+ comentado anteriormente entrará completamente en 
+\begin_inset Formula $t_{c}$
+\end_inset
+
+ y por ende se necesitará esperar N ciclos de clock para cubrir 
+\begin_inset Formula $T_{it}$
+\end_inset
+
+, por lo que resulta 
+\begin_inset Formula $T_{it}\geq N\cdot t_{c}$
+\end_inset
+
+ como requerimiento.
+\end_layout
+
+\begin_layout Standard
+Lo último, en conjunto con el requisito impuesto para el tiempo de sample
+ mencionado anteriormente nos lleva a la conclusión que la frecuencia de
+ clock mínima para implementar el sistema es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{N}{12.5\mu s-t_{e}}\leq f_{clk}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Componentes físicos de la placa base
+\end_layout
+
+\begin_layout Subsubsection
+Sample and Hold
+\end_layout
+
+\begin_layout Standard
+Dado que en Trabajo Práctico 1 se realizó el análisis del circuito integrado
+ LF398 y habiendo verificado en la subsección anterior la posibilidad de
+ utilizar a este integrado con el rango de frecuencias de muestreo impuesto
+ por consigna, se decidió utilizar al mismo para la placa base ADA.
+ El tiempo de establecimiento fijado por la datasheet del mismo es de 
+\begin_inset Formula $t_{e}=0.8\mu s$
+\end_inset
+
+.
+ De aquí, asumiendo que se cumple que 
+\begin_inset Formula $t_{dac}+t_{comp}<<t_{c}$
+\end_inset
+
+, ya se desprende el valor numérico de la frecuencia mínima de clock:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{clk}\geq685kHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo cual se corresponde en el caso extremo con un período de clock 
+\begin_inset Formula $t_{c}\text{=}1.46\mu s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+DAC
+\end_layout
+
+\begin_layout Standard
+Por ser el único DAC disponible en el pañol, además de ser el fijado por
+ consigna para el resto del trabajo, se elige como DAC a utilizar el DAC
+ 0808L.
+ Este integrado tiene un tiempo de respuesta de 
+\begin_inset Formula $150ns$
+\end_inset
+
 .
 \end_layout
 
 \begin_layout Standard
-Restando 
-\begin_inset Formula $t_{a}$
-\end_inset
-
- obtenemos luego el tiempo en el cual se realizarán cada una de las N=8
- iteraciones, lo cual arroja un 
-\begin_inset Formula $t_{c}=t_{sar}=\frac{\tau-t_{a}}{N}=$
+Usando la notación fijada anteriormente, 
+\begin_inset Formula $t_{dac}=150ns$
 \end_inset
 
 .
- Este tiempo de clock arroja un valor mínimo de frecuencia de clock de 
-\begin_inset Formula $f_{clk}=\frac{1}{t_{c}}=$
+\end_layout
+
+\begin_layout Subsubsection
+Comparador
+\end_layout
+
+\begin_layout Standard
+Por disponibilidad en el pañol, el circuito integrado usado como comparador
+ LM311, cuyo tiempo de conversión es 
+\begin_inset Formula $t_{comp}=165ns$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+De estos dos tiempos, se ve que 
+\begin_inset Formula $t_{comp}+t_{dac}=315ns=0.315\mu s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quote
+Y de esto, 
+\begin_inset Formula $\frac{t_{comp}+t_{dac}}{t_{c}}\cdot100=21.6\%$
+\end_inset
+
+.
+ Se ve entonces que el tiempo en el que se realiza la comparación es suficiente
+ como para que entre en un período de clock, por lo que se puede esperar
+ un sólo período para poder recibir el resultado de la comparación y así
+ se cumple la condición que asumimos para calcular la frecuencia mínima
+ de clock.
 \end_layout
 
 \begin_layout Subsection
@@ -868,8 +1008,193 @@ Implementación física del módulo lógico
 \end_layout
 
 \begin_layout Standard
-Se decidió implementar al módulo lógico mediante el uso de una FPGA, programándo
-la con el uso de Quartus II.
+Se decidió implementar al módulo lógico mediante el uso de una FPGA Neo-Dos
+ Nano, programándola con el uso de Quartus II.
+ La frecuencia de Clock interno de esta FPGA es de 50Mhz.
+\end_layout
+
+\begin_layout Standard
+Para independizar al módulo lógico de la FPGA de la frecuencia de muestreo
+ que se está utilizando, se busca un tratamiento genérico del conversor
+ en el que el tiempo total de muestro 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ y sus respectivos tiempos 
+\begin_inset Formula $T_{H}$
+\end_inset
+
+ y 
+\begin_inset Formula $T_{s}$
+\end_inset
+
+ sean expresados en un múltiplo de la frecuencia de Clock utilizada.
+\end_layout
+
+\begin_layout Standard
+Dado el período de clock mínimo 
+\begin_inset Formula $t_{c}=1.46\mu s$
+\end_inset
+
+ establecido anteriormente, se decide que para cubrir el tiempo de establecimien
+to 
+\begin_inset Formula $t_{e}\text{=}0.8\mu s$
+\end_inset
+
+ se necesita al menos un período de clock.
+ Se elige el caso extremo para poder utilizar la mayor cantidad de tiempo
+ en tiempo efectivo de muestreo.
+\end_layout
+
+\begin_layout Standard
+Sabemos por el razonamiento de la sección anterior que necesitaremos 
+\begin_inset Formula $N\text{=8}$
+\end_inset
+
+ períodos de clock para realizar las comparaciones.
+ De los tiempos de establecimiento y de comparación, se decide entonces
+ que 
+\begin_inset Formula $T_{H}\text{=}9\cdot t_{c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para el período de sampling, se sabe que como mínimo se necesitará que
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $T_{m}\cdot0.45=T_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se sabe que 
+\begin_inset Formula $T_{H}=0.55\cdot T_{m}=9\cdot t_{cmín}$
+\end_inset
+
+, entonces
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $T_{m}=\frac{9}{0.55}\cdot t_{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De aquí, 
+\begin_inset Formula $T_{S}=T_{m}\cdot0.45=9\cdot\frac{0.45}{0.55}\cdot t_{cmín}$
+\end_inset
+
+.
+ Manteniendo esta relación para otros valores de clock y aproximando al
+ entero techo,
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $T_{S}\text{\ensuremath{\approx8\cdot t_{c}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces,
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $T_{m}=T_{H}+T_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $T_{m}=17\cdot t_{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y por lo tanto obtenemos la relación final entre frecuencia de muestreo
+ y de clock:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{clk}=f_{m}\cdot17$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cabe destacar que de esta relación, dado que se tomó la relación, que en
+ el cálculo teórico no había sido tenido en cuenta, obtenemos una condición
+ más restrictiva para la frecuencia del clock, en la que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{clk}\geq750kHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, esta condición no resulta para nada restrictiva para la FPGA
+ utilizada y las frecuencias impuestas por consigna, ya que el clock interno
+ de la misma, como se mencionó anteriormente, es de 50Mhz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imágenes/sample_hold_times_final.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distribución final de tiempos en función de períodos de Clock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

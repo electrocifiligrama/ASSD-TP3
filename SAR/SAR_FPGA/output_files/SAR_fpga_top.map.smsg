@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at logic_m.v(20): always construct contains both blocking and non-blocking assignments File: C:/ITBA/8° Cuatrimestre/Análisis de Señales y Sistemas Digitales/Trabajos Prácticos/ASSD-TP3/SAR/SAR_FPGA/logic_m.v Line: 20
