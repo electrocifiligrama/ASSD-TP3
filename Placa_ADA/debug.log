@@ -1,1 +1,7 @@
 [0528/105438:INFO:CONSOLE(0)] "XMLHttpRequest cannot load https://ad-start.auxtool.com/ad-start-visitor/add. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://www.altium.com' is therefore not allowed access.", source: https://www.altium.com/ad-start/ (0)
+[0529/155706:INFO:CONSOLE(0)] "XMLHttpRequest cannot load https://ad-start.auxtool.com/ad-start-visitor/add. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'https://www.altium.com' is therefore not allowed access.", source: https://www.altium.com/ad-start/ (0)
+[0529/183320:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0529/183321:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0529/183321:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0529/183321:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0529/183321:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
