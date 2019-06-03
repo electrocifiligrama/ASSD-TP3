@@ -1,0 +1,37 @@
+PCAD Importer Log
+Project : LM7805.LibPkg
+
+Section : C:\Users\Public\Documents\Altium\AD17\Library\LM7805\LM7805.lia
+    Section : PCB Library - LM7805.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token isVisible On Line 161
+            Warning - 1 : Skipping Token isVisible On Line 162
+            Warning - 1 : Skipping Token isVisible On Line 163
+            Warning - 1 : Skipping Token isVisible On Line 186
+            Warning - 1 : Skipping Token isVisible On Line 187
+            Warning - 1 : Skipping Token isVisible On Line 188
+            Warning - 1 : Skipping Token LM7805C On Line 214
+            Warning - 1 : Skipping Token attachedSymbol On Line 271
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - LM7805.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token multiLayer On Line 95
+            Warning - 1 : Skipping Token layerContents On Line 101
+            Warning - 1 : Skipping Token layerContents On Line 105
+            Warning - 1 : Skipping Token layerContents On Line 154
+            Warning - 1 : Skipping Token layerContents On Line 158
+            Warning - 1 : Skipping Token layerContents On Line 183
+            Warning - 1 : Skipping Token layerContents On Line 208
+        EndSection
+
+        Section : Generating SCH Library - LM7805.SchLib
+        EndSection
+    EndSection
+EndSection

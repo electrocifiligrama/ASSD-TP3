@@ -1,1 +1,6 @@
-Record=TopLevelDocument|FileName=ADC.SchDoc
+Record=TopLevelDocument|FileName=Placa_ADA.SchDoc
+Record=SheetSymbol|SourceDocument=Placa_ADA.SchDoc|Designator=ADC_FPGA|SchDesignator=ADC_FPGA|FileName=ADC.SchDoc|SymbolType=Normal|RawFileName=ADC.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Placa_ADA.SchDoc|Designator=FAA|SchDesignator=FAA|FileName=filtro.SchDoc|SymbolType=Normal|RawFileName=filtro.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Placa_ADA.SchDoc|Designator=FR|SchDesignator=FR|FileName=filtro2.SchDoc|SymbolType=Normal|RawFileName=filtro2.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Placa_ADA.SchDoc|Designator=Latch-LEDS|SchDesignator=Latch-LEDS|FileName=Leds.SchDoc|SymbolType=Normal|RawFileName=Leds.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=Placa_ADA.SchDoc|Designator=OFFSET|SchDesignator=OFFSET|FileName=offset.SchDoc|SymbolType=Normal|RawFileName=offset.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
