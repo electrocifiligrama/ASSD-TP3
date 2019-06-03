@@ -1197,5 +1197,77 @@ Distribución final de tiempos en función de períodos de Clock
 
 \end_layout
 
+\begin_layout Subsubsection
+Frecuencia máxima de operación
+\end_layout
+
+\begin_layout Standard
+Dado que la consigna impone como condición una frecuencia máxima de muestreo
+ de 44.1kHz, esta fue la utilizada para los cálculos de diseño y es por esto
+ que la frecuencia máxima de operación será la misma.
+ Sin embargo, nos hacemos la pregunta de cuál será la máxima frecuencia
+ de conversión que se podría llegar a implementar si la limitación no estuviera
+ impuesta por consigna.
+\end_layout
+
+\begin_layout Standard
+Sin tener en cuenta el tiempo de iteracion, tenemos que por cada período
+ de muestreo, 
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ deberán entran al menos un tiempo 
+\begin_inset Formula $t_{min}\text{=}N\cdot(t_{dac}+t_{comp})+t_{e}+t_{acq}$
+\end_inset
+
+, donde 
+\begin_inset Formula $t_{acq}$
+\end_inset
+
+ es el tiempo de acquisición del sample and hold de 
+\begin_inset Formula $10\mu s$
+\end_inset
+
+ ya mencionado y el resto de los valores ya son conocidos por la notación
+ previa.
+ De aquí surge que 
+\begin_inset Formula $t_{min}\text{= }13.32\mu s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Asumiendo ningún otro retraso, obtenemos la frecuencia máxima de muestreo
+ a partir de este valor de 
+\begin_inset Formula $75kHz$
+\end_inset
+
+.
+ Dado que la FPGA maneja frecuencias de clock de 50Mhz (666 veces más grande),
+ se asume despreciables el resto de los tiempos a tener en cuenta, por lo
+ que tomando arbitrariamente un margen de error de 5kHz se puede fijar un
+ valor seguro de frecuencia máxima de muestreo del ADC de:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $f_{máx}=70kHz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Errores de precisión
+\end_layout
+
+\begin_layout Standard
+Al haber tenido en cuenta los máximos tiempos de establecimiento y de acquisició
+n dictados por las datasheets de los componentes, los errores de cuantización
+ del ADC estarán dados mayoritariamente por la operación comparadora.
+ 
+\end_layout
+
 \end_body
 \end_document
