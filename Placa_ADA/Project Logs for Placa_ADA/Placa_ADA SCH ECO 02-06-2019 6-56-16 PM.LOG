@@ -1,0 +1,2 @@
+Change Component Footprint: Designator=SwitchesLEDS Old Footprint=DIP-16-KEY New Footprint=DIP_SW_8WAY_SMD
+Change Component Comment: Designator=SwitchesLEDS Old Comment=SW-DIP8 New Comment=SW DIP-8

@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=BUFFER_ADC Old Footprint=JG008 New Footprint=TI-D8_N
+Change Component Footprint: Designator=BUFFER_ADC Old Footprint=JG008 New Footprint=TI-D8_N
+Change Component Comment: Designator=BUFFER_ADC Old Comment=TL082JG New Comment=TL082ACD
+Change Component Comment: Designator=BUFFER_ADC Old Comment=TL082JG New Comment=TL082ACD

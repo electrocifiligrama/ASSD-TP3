@@ -1,0 +1,2 @@
+Remove Pin=BUFFER_ADC-4 From Net=GND_ADC_net
+Remove Pin=BUFFER_ADCB-5 From Net=GND_ADC_net
