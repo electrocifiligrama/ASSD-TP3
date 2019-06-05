@@ -11,7 +11,7 @@ module PseudoPll(
 );
 //Parametros
 parameter F_CLK_MIN = 6000;
-parameter F_CLK_MAX = 100000;
+parameter F_CLK_MAX = 800000;
 parameter MIN_CLK_STEP =(F_CLK_MAX-F_CLK_MIN)/255;
 
 input wire clk_in;
@@ -29,7 +29,7 @@ end
 
 always @(posedge clk_in) begin
   desired_clk <= (MIN_CLK_STEP*freq_param)+F_CLK_MIN;
-  edges_per_on_cycle <= 1/(desired_clk*2*0.000001);
+  edges_per_on_cycle <= 1/(desired_clk*2*0.00000002);
   if (counter < (edges_per_on_cycle-1)) begin //Aumenta el contador con cada flanco ascendente
     counter <= counter +1;
   end
