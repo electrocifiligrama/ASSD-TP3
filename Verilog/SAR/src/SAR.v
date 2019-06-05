@@ -1,4 +1,4 @@
-module logica (start, clk, cmp_in, data, sh, eoc);
+module SAR(start, clk, cmp_in, data, sh, eoc);
 
 output reg eoc, sh;
 output reg [7:0]data;
@@ -14,7 +14,7 @@ initial begin
 	data <= 8'b10000000;
 	eoc <= 0;
 	sh <= 1;			//empieza a samplear
-	curr_bit = 0;
+	curr_bit = 7;
 end
 
 always @ (posedge clk)begin
@@ -24,7 +24,7 @@ always @ (posedge clk)begin
 		data <= 8'b10000000;
 		sh <= 1;			//empiezo a samplear
 		reset <= 1;
-		curr_bit = 0;
+		curr_bit = 7;
 	end 
 	else begin
 		reset <= 0;
@@ -35,12 +35,12 @@ always @ (posedge clk)begin
 				if (cmp_in == 0) begin
 					data[curr_bit] = 0;
 				end 
-				else begin
+				curr_bit = curr_bit - 1;
+				if(curr_bit >= 0) begin
 					data[curr_bit] = 1;
-				end 
-				curr_bit = curr_bit + 1;
-				if(curr_bit == 9) begin
-					eoc <= 1;
+				end
+				else begin
+				  eoc <= 1;
 				end
 			end
 		end 
