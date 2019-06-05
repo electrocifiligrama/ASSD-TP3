@@ -1,0 +1,506 @@
+Added Component: Designator=Alim(BORNERA3)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_clock(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_filtros(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int3(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int4(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int5(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int6(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int7(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int8(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int9(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int10(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int11(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C1_int12(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C2_filtros(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C3_filtros(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C4_filtros(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup1_clock(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup2_clock(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup3_clock(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_dif1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_dif2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_filtros1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_filtros2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_reg1(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_reg2(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_reg3(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ccoup_reg4(CAP200)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J2(JUMPER2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J3(JUMPER2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J4(JUMPER2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J5(JUMPER2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J6(JUMPER2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1_clock(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1_filtros(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R2_filtros(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R3_filtros(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R4_filtros(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=r_dif1(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=r_dif2(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=r_reg1(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=r_reg2(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=r_reg3(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Ra_clock(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rb_clock(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rcomp1_clock(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rcomp2_clock(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=rcomp_int1(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=rcomp_int2(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=rpreset_reg(PRESET V)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rup_int1(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=Rup(RES300)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U1_clock(DIP254P762X508-16)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "CD4046BE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "PDIP-16 Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/CD4046BE/Texas%20Instruments/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U1_dif(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/tl082.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U1_filtros(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/tl082.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U1_int(648-08)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MS-001-BB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.onsemi.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.onsemi.com/pub/Collateral/MC14051B-D.PDF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 16 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "648-08"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Apr-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "15-Apr-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U1_reg1(TO-220 H)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U1_reg2(TO-220 H)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U2_clock(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/lm111.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1992"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U2_int(648-08)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "MS-001-BB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.onsemi.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.onsemi.com/pub/Collateral/MC14051B-D.PDF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 16 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "648-08"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Apr-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "15-Apr-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U2_reg1(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/tl082.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U_int1(DIP8)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U_int2(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/lm111.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1992"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=Ud_int1(646-06)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.onsemi.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.onsemi.com/pub/Collateral/MC74HC74A-D.PDF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Mar-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 14 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "646-06"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "15-Apr-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=vinBorn(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=voutBITBorn(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=voutBorn(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=+Valim Pin=Alim-3
+Added Pin To Net: NetName=+Valim Pin=C1_int6-1
+Added Pin To Net: NetName=+Valim Pin=C1_int7-1
+Added Pin To Net: NetName=+Valim Pin=C1_int8-1
+Added Pin To Net: NetName=+Valim Pin=C1_int9-1
+Added Pin To Net: NetName=+Valim Pin=C1_int10-1
+Added Pin To Net: NetName=+Valim Pin=C1_int11-1
+Added Pin To Net: NetName=+Valim Pin=Ccoup1_clock-1
+Added Pin To Net: NetName=+Valim Pin=Ccoup2_clock-1
+Added Pin To Net: NetName=+Valim Pin=Ccoup_filtros1-1
+Added Pin To Net: NetName=+Valim Pin=Ccoup_reg2-1
+Added Pin To Net: NetName=+Valim Pin=Ra_clock-2
+Added Pin To Net: NetName=+Valim Pin=Rcomp1_clock-1
+Added Pin To Net: NetName=+Valim Pin=U1_clock-16
+Added Pin To Net: NetName=+Valim Pin=U1_dif-8
+Added Pin To Net: NetName=+Valim Pin=U1_filtros-8
+Added Pin To Net: NetName=+Valim Pin=U1_reg1-3
+Added Pin To Net: NetName=+Valim Pin=U2_clock-4
+Added Pin To Net: NetName=+Valim Pin=U2_clock-8
+Added Pin To Net: NetName=+Valim Pin=U2_reg1-8
+Added Pin To Net: NetName=+Valim Pin=U_int1-4
+Added Pin To Net: NetName=+Valim Pin=U_int1-8
+Added Pin To Net: NetName=+Valim Pin=U_int2-4
+Added Pin To Net: NetName=+Valim Pin=U_int2-8
+Added Net: Name=+Valim
+Added Pin To Net: NetName=+Vin Pin=J2-2
+Added Pin To Net: NetName=+Vin Pin=U2_int-12
+Added Net: Name=+Vin
+Added Pin To Net: NetName=+Voffset Pin=r_reg3-2
+Added Pin To Net: NetName=+Voffset Pin=U1_int-3
+Added Pin To Net: NetName=+Voffset Pin=U2_int-3
+Added Pin To Net: NetName=+Voffset Pin=U2_reg1-7
+Added Net: Name=+Voffset
+Added Pin To Net: NetName=+Vout Pin=J2-1
+Added Pin To Net: NetName=+Vout Pin=U1_dif-1
+Added Pin To Net: NetName=+Vout Pin=U1_dif-2
+Added Net: Name=+Vout
+Added Pin To Net: NetName=+Vref Pin=C1_int12-1
+Added Pin To Net: NetName=+Vref Pin=Ccoup3_clock-1
+Added Pin To Net: NetName=+Vref Pin=Ccoup_reg1-1
+Added Pin To Net: NetName=+Vref Pin=r_reg1-1
+Added Pin To Net: NetName=+Vref Pin=Rup-2
+Added Pin To Net: NetName=+Vref Pin=Rup_int1-2
+Added Pin To Net: NetName=+Vref Pin=U1_int-16
+Added Pin To Net: NetName=+Vref Pin=U1_reg1-2
+Added Pin To Net: NetName=+Vref Pin=U2_int-16
+Added Pin To Net: NetName=+Vref Pin=Ud_int1-1
+Added Pin To Net: NetName=+Vref Pin=Ud_int1-4
+Added Pin To Net: NetName=+Vref Pin=Ud_int1-10
+Added Pin To Net: NetName=+Vref Pin=Ud_int1-13
+Added Pin To Net: NetName=+Vref Pin=Ud_int1-14
+Added Net: Name=+Vref
+Added Pin To Net: NetName=-Valim Pin=Alim-1
+Added Pin To Net: NetName=-Valim Pin=Ccoup_filtros2-1
+Added Pin To Net: NetName=-Valim Pin=Ccoup_reg4-1
+Added Pin To Net: NetName=-Valim Pin=U1_dif-4
+Added Pin To Net: NetName=-Valim Pin=U1_filtros-4
+Added Pin To Net: NetName=-Valim Pin=U1_reg2-3
+Added Pin To Net: NetName=-Valim Pin=U2_reg1-4
+Added Net: Name=-Valim
+Added Pin To Net: NetName=-Vin Pin=J3-2
+Added Pin To Net: NetName=-Vin Pin=U1_int-12
+Added Net: Name=-Vin
+Added Pin To Net: NetName=-Voffset Pin=r_reg2-1
+Added Pin To Net: NetName=-Voffset Pin=rpreset_reg-2
+Added Pin To Net: NetName=-Voffset Pin=U1_int-5
+Added Pin To Net: NetName=-Voffset Pin=U2_int-5
+Added Pin To Net: NetName=-Voffset Pin=U2_reg1-1
+Added Net: Name=-Voffset
+Added Pin To Net: NetName=-Vout Pin=J3-1
+Added Pin To Net: NetName=-Vout Pin=r_dif1-2
+Added Pin To Net: NetName=-Vout Pin=U1_dif-7
+Added Net: Name=-Vout
+Added Pin To Net: NetName=-Vref Pin=Ccoup_reg3-1
+Added Pin To Net: NetName=-Vref Pin=U1_int-7
+Added Pin To Net: NetName=-Vref Pin=U1_reg2-2
+Added Pin To Net: NetName=-Vref Pin=U2_int-7
+Added Net: Name=-Vref
+Added Pin To Net: NetName=analogResult1 Pin=U1_int-4
+Added Pin To Net: NetName=analogResult1 Pin=U1_int-13
+Added Net: Name=analogResult1
+Added Pin To Net: NetName=analogResult2 Pin=J6-1
+Added Pin To Net: NetName=analogResult2 Pin=U2_int-4
+Added Pin To Net: NetName=analogResult2 Pin=U2_int-13
+Added Pin To Net: NetName=analogResult2 Pin=voutBITBorn-2
+Added Net: Name=analogResult2
+Added Pin To Net: NetName=clk Pin=J4-1
+Added Pin To Net: NetName=clk Pin=U1_int-10
+Added Pin To Net: NetName=clk Pin=U1_int-11
+Added Pin To Net: NetName=clk Pin=U2_int-10
+Added Pin To Net: NetName=clk Pin=U2_int-11
+Added Pin To Net: NetName=clk Pin=Ud_int1-3
+Added Pin To Net: NetName=clk Pin=Ud_int1-11
+Added Net: Name=clk
+Added Pin To Net: NetName=clockSignal Pin=J4-2
+Added Pin To Net: NetName=clockSignal Pin=Rup-1
+Added Pin To Net: NetName=clockSignal Pin=U2_clock-7
+Added Net: Name=clockSignal
+Added Pin To Net: NetName=GND Pin=Alim-2
+Added Pin To Net: NetName=GND Pin=C1_filtros-2
+Added Pin To Net: NetName=GND Pin=C1_int6-2
+Added Pin To Net: NetName=GND Pin=C1_int7-2
+Added Pin To Net: NetName=GND Pin=C1_int8-2
+Added Pin To Net: NetName=GND Pin=C1_int9-2
+Added Pin To Net: NetName=GND Pin=C1_int10-2
+Added Pin To Net: NetName=GND Pin=C1_int11-2
+Added Pin To Net: NetName=GND Pin=C1_int12-2
+Added Pin To Net: NetName=GND Pin=C4_filtros-1
+Added Pin To Net: NetName=GND Pin=Ccoup1_clock-2
+Added Pin To Net: NetName=GND Pin=Ccoup2_clock-2
+Added Pin To Net: NetName=GND Pin=Ccoup3_clock-2
+Added Pin To Net: NetName=GND Pin=Ccoup_dif1-2
+Added Pin To Net: NetName=GND Pin=Ccoup_dif2-2
+Added Pin To Net: NetName=GND Pin=Ccoup_filtros1-2
+Added Pin To Net: NetName=GND Pin=Ccoup_filtros2-2
+Added Pin To Net: NetName=GND Pin=Ccoup_reg1-2
+Added Pin To Net: NetName=GND Pin=Ccoup_reg2-2
+Added Pin To Net: NetName=GND Pin=Ccoup_reg3-2
+Added Pin To Net: NetName=GND Pin=Ccoup_reg4-2
+Added Pin To Net: NetName=GND Pin=R1_clock-3
+Added Pin To Net: NetName=GND Pin=Rb_clock-3
+Added Pin To Net: NetName=GND Pin=Rcomp2_clock-1
+Added Pin To Net: NetName=GND Pin=U1_clock-3
+Added Pin To Net: NetName=GND Pin=U1_clock-5
+Added Pin To Net: NetName=GND Pin=U1_clock-8
+Added Pin To Net: NetName=GND Pin=U1_clock-14
+Added Pin To Net: NetName=GND Pin=U1_dif-5
+Added Pin To Net: NetName=GND Pin=U1_int-2
+Added Pin To Net: NetName=GND Pin=U1_int-6
+Added Pin To Net: NetName=GND Pin=U1_int-8
+Added Pin To Net: NetName=GND Pin=U1_reg1-1
+Added Pin To Net: NetName=GND Pin=U1_reg2-1
+Added Pin To Net: NetName=GND Pin=U2_clock-1
+Added Pin To Net: NetName=GND Pin=U2_int-2
+Added Pin To Net: NetName=GND Pin=U2_int-6
+Added Pin To Net: NetName=GND Pin=U2_int-8
+Added Pin To Net: NetName=GND Pin=U2_reg1-3
+Added Pin To Net: NetName=GND Pin=U2_reg1-5
+Added Pin To Net: NetName=GND Pin=U_int2-1
+Added Pin To Net: NetName=GND Pin=Ud_int1-7
+Added Pin To Net: NetName=GND Pin=vinBorn-1
+Added Pin To Net: NetName=GND Pin=voutBITBorn-1
+Added Pin To Net: NetName=GND Pin=voutBorn-1
+Added Net: Name=GND
+Added Pin To Net: NetName=inFR Pin=J6-2
+Added Pin To Net: NetName=inFR Pin=R3_filtros-2
+Added Net: Name=inFR
+Added Pin To Net: NetName=NetC1_clock_1 Pin=C1_clock-1
+Added Pin To Net: NetName=NetC1_clock_1 Pin=U1_clock-6
+Added Net: Name=NetC1_clock_1
+Added Pin To Net: NetName=NetC1_clock_2 Pin=C1_clock-2
+Added Pin To Net: NetName=NetC1_clock_2 Pin=U1_clock-7
+Added Net: Name=NetC1_clock_2
+Added Pin To Net: NetName=NetC1_filtros_1 Pin=C1_filtros-1
+Added Pin To Net: NetName=NetC1_filtros_1 Pin=R2_filtros-2
+Added Pin To Net: NetName=NetC1_filtros_1 Pin=U1_filtros-3
+Added Net: Name=NetC1_filtros_1
+Added Pin To Net: NetName=NetC1_int1_1 Pin=C1_int1-1
+Added Pin To Net: NetName=NetC1_int1_1 Pin=U1_int-14
+Added Net: Name=NetC1_int1_1
+Added Pin To Net: NetName=NetC1_int1_2 Pin=C1_int1-2
+Added Pin To Net: NetName=NetC1_int1_2 Pin=U1_int-15
+Added Net: Name=NetC1_int1_2
+Added Pin To Net: NetName=NetC1_int2_1 Pin=C1_int2-1
+Added Pin To Net: NetName=NetC1_int2_1 Pin=U2_int-14
+Added Net: Name=NetC1_int2_1
+Added Pin To Net: NetName=NetC1_int2_2 Pin=C1_int2-2
+Added Pin To Net: NetName=NetC1_int2_2 Pin=U2_int-15
+Added Net: Name=NetC1_int2_2
+Added Pin To Net: NetName=NetC1_int3_2 Pin=C1_int3-2
+Added Pin To Net: NetName=NetC1_int3_2 Pin=C1_int5-2
+Added Pin To Net: NetName=NetC1_int3_2 Pin=rcomp_int2-2
+Added Pin To Net: NetName=NetC1_int3_2 Pin=U_int1-7
+Added Pin To Net: NetName=NetC1_int3_2 Pin=U_int2-3
+Added Net: Name=NetC1_int3_2
+Added Pin To Net: NetName=NetC1_int4_2 Pin=C1_int4-2
+Added Pin To Net: NetName=NetC1_int4_2 Pin=C1_int5-1
+Added Pin To Net: NetName=NetC1_int4_2 Pin=rcomp_int1-2
+Added Pin To Net: NetName=NetC1_int4_2 Pin=U_int1-1
+Added Pin To Net: NetName=NetC1_int4_2 Pin=U_int2-2
+Added Net: Name=NetC1_int4_2
+Added Pin To Net: NetName=NetC2_filtros_1 Pin=C2_filtros-1
+Added Pin To Net: NetName=NetC2_filtros_1 Pin=R1_filtros-3
+Added Pin To Net: NetName=NetC2_filtros_1 Pin=R2_filtros-3
+Added Net: Name=NetC2_filtros_1
+Added Pin To Net: NetName=NetC3_filtros_1 Pin=C3_filtros-1
+Added Pin To Net: NetName=NetC3_filtros_1 Pin=R3_filtros-3
+Added Pin To Net: NetName=NetC3_filtros_1 Pin=R4_filtros-3
+Added Net: Name=NetC3_filtros_1
+Added Pin To Net: NetName=NetC4_filtros_2 Pin=C4_filtros-2
+Added Pin To Net: NetName=NetC4_filtros_2 Pin=R4_filtros-2
+Added Pin To Net: NetName=NetC4_filtros_2 Pin=U1_filtros-5
+Added Net: Name=NetC4_filtros_2
+Added Pin To Net: NetName=NetJ5_1 Pin=J5-1
+Added Pin To Net: NetName=NetJ5_1 Pin=r_dif2-1
+Added Pin To Net: NetName=NetJ5_1 Pin=U1_dif-3
+Added Net: Name=NetJ5_1
+Added Pin To Net: NetName=NetR1_clock_2 Pin=R1_clock-2
+Added Pin To Net: NetName=NetR1_clock_2 Pin=U1_clock-11
+Added Net: Name=NetR1_clock_2
+Added Pin To Net: NetName=NetR1_filtros_2 Pin=R1_filtros-2
+Added Pin To Net: NetName=NetR1_filtros_2 Pin=vinBorn-2
+Added Net: Name=NetR1_filtros_2
+Added Pin To Net: NetName=Netr_dif1_1 Pin=r_dif1-1
+Added Pin To Net: NetName=Netr_dif1_1 Pin=r_dif2-2
+Added Pin To Net: NetName=Netr_dif1_1 Pin=U1_dif-6
+Added Net: Name=Netr_dif1_1
+Added Pin To Net: NetName=Netr_reg1_2 Pin=r_reg1-2
+Added Pin To Net: NetName=Netr_reg1_2 Pin=rpreset_reg-3
+Added Pin To Net: NetName=Netr_reg1_2 Pin=U2_reg1-2
+Added Net: Name=Netr_reg1_2
+Added Pin To Net: NetName=Netr_reg2_2 Pin=r_reg2-2
+Added Pin To Net: NetName=Netr_reg2_2 Pin=r_reg3-1
+Added Pin To Net: NetName=Netr_reg2_2 Pin=U2_reg1-6
+Added Net: Name=Netr_reg2_2
+Added Pin To Net: NetName=NetRcomp1_clock_2 Pin=Rcomp1_clock-2
+Added Pin To Net: NetName=NetRcomp1_clock_2 Pin=Rcomp2_clock-2
+Added Pin To Net: NetName=NetRcomp1_clock_2 Pin=U2_clock-2
+Added Net: Name=NetRcomp1_clock_2
+Added Pin To Net: NetName=NetRup_int1_1 Pin=Rup_int1-1
+Added Pin To Net: NetName=NetRup_int1_1 Pin=U_int2-7
+Added Pin To Net: NetName=NetRup_int1_1 Pin=Ud_int1-2
+Added Pin To Net: NetName=NetRup_int1_1 Pin=Ud_int1-12
+Added Net: Name=NetRup_int1_1
+Added Pin To Net: NetName=NetU1_clock_4 Pin=U1_clock-4
+Added Pin To Net: NetName=NetU1_clock_4 Pin=U2_clock-3
+Added Net: Name=NetU1_clock_4
+Added Pin To Net: NetName=NOQ Pin=U2_int-9
+Added Pin To Net: NetName=NOQ Pin=Ud_int1-8
+Added Net: Name=NOQ
+Added Pin To Net: NetName=outFAA Pin=C2_filtros-2
+Added Pin To Net: NetName=outFAA Pin=J5-2
+Added Pin To Net: NetName=outFAA Pin=U1_filtros-1
+Added Pin To Net: NetName=outFAA Pin=U1_filtros-2
+Added Net: Name=outFAA
+Added Pin To Net: NetName=outFR Pin=C3_filtros-2
+Added Pin To Net: NetName=outFR Pin=U1_filtros-6
+Added Pin To Net: NetName=outFR Pin=U1_filtros-7
+Added Pin To Net: NetName=outFR Pin=voutBorn-2
+Added Net: Name=outFR
+Added Pin To Net: NetName=Q Pin=U1_int-9
+Added Pin To Net: NetName=Q Pin=Ud_int1-9
+Added Net: Name=Q
+Added Pin To Net: NetName=V1- Pin=C1_int4-1
+Added Pin To Net: NetName=V1- Pin=rcomp_int1-1
+Added Pin To Net: NetName=V1- Pin=U2_int-1
+Added Pin To Net: NetName=V1- Pin=U_int1-2
+Added Pin To Net: NetName=V1- Pin=U_int1-5
+Added Net: Name=V1-
+Added Pin To Net: NetName=V2- Pin=C1_int3-1
+Added Pin To Net: NetName=V2- Pin=rcomp_int2-1
+Added Pin To Net: NetName=V2- Pin=U1_int-1
+Added Pin To Net: NetName=V2- Pin=U_int1-3
+Added Pin To Net: NetName=V2- Pin=U_int1-6
+Added Net: Name=V2-
+Added Pin To Net: NetName=vcoIN Pin=Ra_clock-1
+Added Pin To Net: NetName=vcoIN Pin=Rb_clock-2
+Added Pin To Net: NetName=vcoIN Pin=U1_clock-9
+Added Net: Name=vcoIN
+Added Class: Name=clock
+Added Class: Name=diferencial
+Added Class: Name=filtros
+Added Class: Name=integrator
+Added Class: Name=regulador
+Added Class: Name=sigmaDeltaComplete
+Added Room: Name=clock
+Added Room: Name=diferencial
+Added Room: Name=filtros
+Added Room: Name=integrator
+Added Room: Name=regulador
+Added Room: Name=sigmaDeltaComplete

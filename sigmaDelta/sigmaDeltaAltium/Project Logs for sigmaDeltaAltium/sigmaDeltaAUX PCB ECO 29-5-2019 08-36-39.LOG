@@ -1,0 +1,18 @@
+Added Component: Designator=U78(TO-220 H - DISIPADOR)
+Add component. Clean all parameters for all variants
+Added Component: Designator=U79(TO-220 H - DISIPADOR)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=+Valim Pin=U78-1
+Added Pin To Net: NetName=GND Pin=U78-2
+Added Pin To Net: NetName=+Vref Pin=U78-3
+Added Pin To Net: NetName=GND Pin=U79-1
+Added Pin To Net: NetName=-Valim Pin=U79-2
+Added Pin To Net: NetName=-Vref Pin=U79-3
+Added Member To Class: ClassName=regulador Member=Component U78 78XX
+Added Member To Class: ClassName=regulador Member=Component U79 79XX
+Added Room: Name=clock
+Added Room: Name=diferencial
+Added Room: Name=filtros
+Added Room: Name=integrator
+Added Room: Name=regulador
+Added Room: Name=sigmaDeltaComplete

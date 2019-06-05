@@ -1,0 +1,7 @@
+Change Component Footprint: Designator=U79 Old Footprint=TO-220 H New Footprint=TO-220 H - DISIPADOR
+Added Room: Name=clock
+Added Room: Name=diferencial
+Added Room: Name=filtros
+Added Room: Name=integrator
+Added Room: Name=regulador
+Added Room: Name=sigmaDeltaComplete

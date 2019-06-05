@@ -1,0 +1,177 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+TP 3 ASSD - Sigma Delta Modulator and Conversor
+\end_layout
+
+\begin_layout Section
+Introducción 
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se pretenderá diseñar un conversor analógico
+ - digital
+\end_layout
+
+\begin_layout Standard
+SE EXPLICA LO QUE SE VA A HACER
+\end_layout
+
+\begin_layout Section
+Marco Teórico
+\end_layout
+
+\begin_layout Standard
+SE EXPLICA QUE SE ARRANCA EL ANALISIS PARTIENDO DE SABER MODULADOR DELTA,
+ PONER EL RAZONAMIENTO PARA PASAR DE MODULADOR DELTA A SIGMA DELTA
+\end_layout
+
+\begin_layout Standard
+EXPLICAR QUE SE USA EL OVERSAMPLING
+\end_layout
+
+\begin_layout Subsection
+Ventajas de Oversampling
+\end_layout
+
+\begin_layout Subsubsection
+Ventajas en el Filtrado
+\end_layout
+
+\begin_layout Subsubsection
+Reducción de Bits
+\end_layout
+
+\begin_layout Subsubsection
+Noise Shaping
+\end_layout
+
+\begin_layout Subsection
+Decimación
+\end_layout
+
+\begin_layout Section
+Diseño e Implementación
+\end_layout
+
+\begin_layout Standard
+DAR UNA INTRO A ESTA PARTE
+\end_layout
+
+\begin_layout Subsection
+Integrador
+\end_layout
+
+\begin_layout Subsubsection
+Capacitores Switcheados
+\end_layout
+
+\begin_layout Subsection
+Cuantizador
+\end_layout
+
+\begin_layout Subsection
+DAC
+\end_layout
+
+\begin_layout Subsection
+Filtros Antialias y Recuperador
+\end_layout
+
+\begin_layout Subsection
+Clock
+\end_layout
+
+\begin_layout Section
+Simulaciones de LTspice
+\end_layout
+
+\begin_layout Section
+Mediciones
+\end_layout
+
+\begin_layout Section
+Análisis de Resultados
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\end_body
+\end_document
