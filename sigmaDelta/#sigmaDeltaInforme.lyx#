@@ -1177,11 +1177,7 @@ Para analizar el bloque que integra la diferencia entre la entrada y la
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard

@@ -96,10 +96,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -207,10 +203,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -928,10 +920,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1177,7 +1165,7 @@ Integrador
 \begin_layout Standard
 Para analizar el bloque que integra la diferencia entre la entrada y la
  salida, se puede observar el siguiente circuito analógico tan solo compuesto
- por un operacional, capacitores y resistencias:
+ por dos operacionales, capacitores y resistencias:
 \end_layout
 
 \begin_layout Standard
@@ -1185,13 +1173,13 @@ Para analizar el bloque que integra la diferencia entre la entrada y la
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Circuito Integrador
+Circuito Integrador Diferencial
 \end_layout
 
 \end_inset
@@ -1535,8 +1523,15 @@ En cuanto al capacitor
 \begin_inset Formula $"C"$
 \end_inset
 
-, debe ser tal que regule la ganancia para las frecuencias DETERMINAR EL
- VALOR DE CCCCCCCCCCCCCCCCCC.
+, se elige el valor de 
+\begin_inset Formula $330pF$
+\end_inset
+
+ para que el factor de ganancia 
+\begin_inset Formula $\frac{Cs}{C}$
+\end_inset
+
+sea igual a la unidad.
 \end_layout
 
 \begin_layout Standard
