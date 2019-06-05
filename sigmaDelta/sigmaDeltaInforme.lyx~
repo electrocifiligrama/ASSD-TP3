@@ -261,15 +261,6 @@ Sigma-Delta
 \end_inset
 
 ).
- Vale aclarar que el sistema al cual se arribo mediante los diagramas es
- un 
-\begin_inset Formula $\sum\triangle$
-\end_inset
-
- de primer orden, pero se pueden obtener sistemas de ordenes superiores
- al agregar mayor cantidad de realimentaciones o al incorporar varios sistemas
- en cascada.
- En este artículo solo se tratará con el sistema de primer orden.
 \end_layout
 
 \begin_layout Standard
@@ -312,6 +303,10 @@ decimación
 
 \begin_layout Subsection
 Transferencia
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Subsection
@@ -403,7 +398,7 @@ Oversampling - Separación de Espectros de Banda Base
 \end_layout
 
 \begin_layout Subsubsection
-Relación con Noise Shaping
+Noise Shaping
 \end_layout
 
 \begin_layout Standard
@@ -457,10 +452,6 @@ Dicho esto, si se tiene una señal limitada en banda, muestreada a una frecuenci
  relativamente mucho mayor a la frecuencia de Nyquist, existirá ruido que
  sea aportado en frecuencias mayores a la de Nyquist y por ende la banda
  base de la señal será afectada por menor cantidad de ruido de cuantización.
-\end_layout
-
-\begin_layout Standard
-Aún más, la reducción de ruido por oversampling se 
 \end_layout
 
 \begin_layout Subsubsection
