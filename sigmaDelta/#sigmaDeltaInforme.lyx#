@@ -1435,9 +1435,10 @@ En cuanto al capacitor
 \end_layout
 
 \begin_layout Standard
-Sobre el operacional a utilizar, es de interés que este cuente con el suficiente
- slew rate para satisfacer la variaciones de corrientes que se pueden dar
- a la salida del integrador, por ende el circuito integrado 
+Finalmente, sobre el operacional a utilizar, es de interés que este cuente
+ con el suficiente slew rate para satisfacer la variaciones de corrientes
+ que se pueden dar a la salida del integrador, por ende el circuito integrado
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1446,26 +1447,6 @@ LM833
 \end_inset
 
  se puede considerar una buena opción para el diseño.
-\end_layout
-
-\begin_layout Standard
-Finalmente, para realizar las conmutaciones, se puede utilizar el mutiplexor
- 
-\begin_inset Quotes eld
-\end_inset
-
-CD4053
-\begin_inset Quotes erd
-\end_inset
-
-, alternando las conexiones de los capacitores según una señal de control
- (un clock, por ejemplo) y decidiendo el valor de 
-\begin_inset Formula $V_{REF}$
-\end_inset
-
- según el valor de la salida digital del sistema.
- Para este último caso, el mutiplexor funciona implicitamente como el conversor
- digital analógico (DAC).
 \end_layout
 
 \begin_layout Subsection
@@ -1595,11 +1576,6 @@ CD4046
 \end_inset
 
  y 
-\begin_inset Formula $1MHz$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Section
