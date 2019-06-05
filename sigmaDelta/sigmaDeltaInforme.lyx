@@ -782,7 +782,7 @@ En cuanto a la cuantización,
 \end_inset
 
  el valor máximo de la señal.
- Luego:
+ Luego:n
 \end_layout
 
 \begin_layout Standard
@@ -901,6 +901,93 @@ SEGUIR ESTA PARTE DALE DALEEEEEEEEEEEE
 
 \begin_layout Section
 Simulaciones de Simulink - Matlab
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se procede a mostrar la simulación mediante 
+\begin_inset Quotes eld
+\end_inset
+
+Simulink
+\begin_inset Quotes erd
+\end_inset
+
+ del modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+.
+ Para esto se utilizó el siguiente esquema para una simulación idealizada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama - Simulación Idealizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de este modelo, se procederá a realizar diversar simulaciones como
+ respuesta al impulso del sistema, espectro de ruido, etc.
+\end_layout
+
+\begin_layout Subsection
+Simulación de Respuesta al Impulso
+\end_layout
+
+\begin_layout Subsection
+Simulación de Espectro de Ruido
+\end_layout
+
+\begin_layout Standard
+ANTES DEL DECIMADOR Y DESPUES DEL DECIMADOR (ESPECTRO DE RUIDO CON QUE ENTRADA??
+??)
+\end_layout
+
+\begin_layout Subsection
+Simulación del Espectro de Salida con Entrada Senoidal
+\end_layout
+
+\begin_layout Subsection
+Incremento de la Cantidad de Bits
+\end_layout
+
+\begin_layout Standard
+QUE SUCEDE, COMO SE MODIFICA EL ESPECTRO DE RUIDO Y DE LA SEÑAL
+\end_layout
+
+\begin_layout Subsection
+Decimador
+\end_layout
+
+\begin_layout Standard
+EXPLICAR Y GRAFICAR LA RESPUESTA EN FRECUENCIA
 \end_layout
 
 \begin_layout Section
@@ -1059,6 +1146,24 @@ En cuanto al orden de los filtros, para el recuperador no es necesario un
 
 \begin_layout Subsection
 Diferenciador
+\end_layout
+
+\begin_layout Standard
+Luego de ingresar la señal por el filtro antialias, para generar un sistema
+ con mayor grado de inmunidad al ruido, se decide utilizar un buffer y un
+ operacional en configuración inversora con unitaria (
+\begin_inset Formula $ganancia\equiv-1$
+\end_inset
+
+) para generar una señal 
+\begin_inset Formula $+V_{in}$
+\end_inset
+
+ y otra 
+\begin_inset Formula $-V_{in}$
+\end_inset
+
+y así poder plantear el circuito de manera diferencial.
 \end_layout
 
 \begin_layout Subsection
@@ -1468,6 +1573,25 @@ CD4053
  digital analógico (DAC) de la realimentación.
 \end_layout
 
+\begin_layout Subsubsection
+Generación de 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para generar la tensión de 
+\begin_inset Formula $"V_{REF}"$
+\end_inset
+
+ utilizada para el análisis del integrador, se procedió a utilizar dos regulador
+es lineales de tensión para generar +5V y -5V y luego se utilizaron operacionale
+s para poder variar el valor absoluto de la tensión de referencia y así
+ poder realizar mediciones con distintas tensiones de realimentación.
+\end_layout
+
 \begin_layout Subsection
 Cuantizador
 \end_layout
@@ -1602,8 +1726,681 @@ CD4046
  
 \end_layout
 
+\begin_layout Subsection
+Esquemático Final
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan imagenes de los circuitos esquemáticos que componen
+ el prototipo final:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático General
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Integrador y Cuantizador - Generador de 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Diferenciador - Clock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Filtros Antialias y Recuperador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Mediciones
+\end_layout
+
+\begin_layout Standard
+Las mediciones que se consideraron pertinentes fueron, en primer lugar la
+ señal de clock, luego la recuperación de la señal de entrada, la señal
+ digital de salida y la señal diferencial de salida del integrador.
+ Luego, se procedió a realizar mediciones del espectro de la señal de salida
+ digital.
+\end_layout
+
+\begin_layout Standard
+En cuanto a las señales de entradas utilizadas, se propusieron señales senoidale
+s, 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+Gauss y Sinc.
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal de Control - Clock
+\end_layout
+
+\begin_layout Standard
+Ante todo, se procede a exponer las mediciones realizadas para el oscilador
+ utilizado como señal de control, ya que su correcto funcionamiento es crucial
+ para obtener resultados satisfactorios.
+ A continuación se pone en evidencia su funcionamiento para distintas frecuencia
+s:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=60KHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=500KHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=1MHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal Senoidal
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal senoidal de ASÑDKAJSKÑD 
+\begin_inset Formula $V_{pp}$
+\end_inset
+
+ con valor medio cero.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+Gauss
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+GaussASDKASÑKDJASD.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal Sinc
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal SincASDKASÑKDJASD.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
