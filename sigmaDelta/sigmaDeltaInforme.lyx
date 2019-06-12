@@ -29,6 +29,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -94,6 +96,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoBASEsincuadros.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -203,6 +216,24 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/delta2sigmadelta1.PNG
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/delta2sigmadelta2.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -322,6 +353,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/mathModelDiagram.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -469,6 +511,18 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/ordenNoiseShaping.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -570,11 +624,23 @@ Esto se pone en evidencia en el siguiente esquema:
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/separacionBandasFreq.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -674,6 +740,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroShaped.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -800,7 +877,7 @@ Por otro lado, analizando la densidad espectral de potencia de la respuesta
 
 \begin_layout Standard
 \align center
-\begin_inset Formula $\Rightarrow\Delta n=n-n_{os}=\frac{3}{2}log_{2}(L)-\frac{log_{2}(\frac{\pi^{2}}{3}}{2}$
+\begin_inset Formula $\Rightarrow\Delta n=n-n_{os}=\frac{3}{2}log_{2}(L)-\frac{log_{2}(\frac{\pi^{2}}{3})}{2}$
 \end_inset
 
 
@@ -920,6 +997,17 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquemaSIMULINK.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -943,6 +1031,14 @@ Diagrama - Simulación Idealizada
 \begin_layout Standard
 A partir de este modelo, se procederá a realizar diversar simulaciones como
  respuesta al impulso del sistema, espectro de ruido, etc.
+\end_layout
+
+\begin_layout Standard
+Todas las simulaciones se realizaron con una frecuencia de muestreo de 
+\begin_inset Formula $512KHz$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -975,6 +1071,28 @@ Decimador
 \end_layout
 
 \begin_layout Standard
+Se puede notar en el esquema de la simulación idealizada que se estan implementa
+do tres etapas de decimación de cuarto orden cada una, es decir que cada
+ etapa decimación reduce la frecuencia de las muestras en un factor de 4.
+ En total, la frecuencia de muestreo se reduce en 
+\begin_inset Formula $4^{3}=64$
+\end_inset
+
+.
+ Como se ha demostrado anteriormente, para poder realizar esto son necesario
+ 8 bits en caso de que la salida del sistema sigma delta de primer orden
+ sea de un solo bit.
+\end_layout
+
+\begin_layout Standard
+El hecho de implementar de la decimación en varias etapas presenta la ventaja
+ de que se podrían realizar los cálculos (mediante un procesador, ya que
+ la decimación en este caso es una operación digital) en forma paralela
+ para cada una de ellas por separado y así dar como resultado un sistema
+ con menor tiempo de retardo.
+\end_layout
+
+\begin_layout Standard
 EXPLICAR Y GRAFICAR LA RESPUESTA EN FRECUENCIA
 \end_layout
 
@@ -1004,6 +1122,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoBASE.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1173,7 +1302,18 @@ Para analizar el bloque que integra la diferencia entre la entrada y la
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/integradorConRes.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1313,6 +1453,17 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/res2capSwitch.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1355,6 +1506,17 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/intFinal.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1381,6 +1543,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/intHold.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1415,6 +1588,18 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/intSample.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1738,6 +1923,13 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoGeneral.PNG
+	scale 30
+
+\end_inset
+
 
 \end_layout
 
@@ -1753,10 +1945,6 @@ Esquemático General
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -1768,6 +1956,24 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoIntegrador.PNG
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoGenVref.PNG
+	scale 25
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1798,6 +2004,24 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoDiff.PNG
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoClock.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1820,6 +2044,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/esquematicoFiltros.PNG
+	scale 30
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1857,6 +2092,8 @@ s,
 \end_inset
 
 Gauss y Sinc.
+ Estas se exigieron a las máximas condiciones que admite el sistema, en
+ cuanto a amplitud y frecuencia.
 \end_layout
 
 \begin_layout Subsection
@@ -1877,10 +2114,6 @@ placement H
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1980,11 +2213,25 @@ Mediciones de Señal Senoidal
 \end_layout
 
 \begin_layout Standard
-Se procedió a utilizar como entrada una señal senoidal de ASÑDKAJSKÑD 
-\begin_inset Formula $V_{pp}$
+Se procedió a utilizar como entrada una señal senoidal de 
+\begin_inset Formula $5V_{pp}$
 \end_inset
 
- con valor medio cero.
+ con valor medio cero a una frecuencia de 
+\begin_inset Formula $5KHz$
+\end_inset
+
+.
+ La frecuencia de clock utilizada fue de 
+\begin_inset Formula $900KHz$
+\end_inset
+
+, a excepción de una medición que expone el alias introducido al recuperar
+ la señal en consecuencia de reducir la frecuencia de muestreo a 
+\begin_inset Formula $300KHz$
+\end_inset
+
+.
  A continuación se exponen los resultados obtenidos:
 \end_layout
 
@@ -1996,10 +2243,21 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoDigitalizada.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Señal de entrada Vs Digitalizada
+Señal de Entrada Vs Digitalizada
 \end_layout
 
 \end_inset
@@ -2013,6 +2271,19 @@ Señal de entrada Vs Digitalizada
 \end_layout
 
 \begin_layout Standard
+En la siguiente figura, mediante señales recuperadas con distintas frecuencias
+ de muestreo (
+\begin_inset Formula $900KHz$
+\end_inset
+
+ izquierda - 
+\begin_inset Formula $300KHz$
+\end_inset
+
+ derecha) se evidencia la importancia del oversampling en este sentido:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2020,10 +2291,28 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoRecuperada.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoAlias.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Señal de entrada Vs Recuperada
+Señal de Entrada Vs Recuperada
 \end_layout
 
 \end_inset
@@ -2037,6 +2326,22 @@ Señal de entrada Vs Recuperada
 \end_layout
 
 \begin_layout Standard
+Además, para mostrar la señal en la instancia anterior a la cuantización,
+ es decir, justo después de la integración, se procedió a medir la salida
+ del integrador diferencial (señal verde y amarilla) y se muestra también
+ la resta (representada en la señal de color rosa) realizada mediante la
+ función 
+\begin_inset Quotes eld
+\end_inset
+
+Math
+\begin_inset Quotes erd
+\end_inset
+
+ del osciloscopio.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2044,10 +2349,21 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoDifInt.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Señal de entrada Vs Salida Diferencial del Integrador
+Señal de Entrada Vs Salida Diferencial del Integrador
 \end_layout
 
 \end_inset
@@ -2061,6 +2377,33 @@ Señal de entrada Vs Salida Diferencial del Integrador
 \end_layout
 
 \begin_layout Standard
+Manteniendo una frecuencia de muestras de 
+\begin_inset Formula $900KHz$
+\end_inset
+
+, se procedió a aplicar el modo 
+\begin_inset Quotes eld
+\end_inset
+
+average
+\begin_inset Quotes erd
+\end_inset
+
+ al osciloscopio y medir la señal digitalizada, pretendiendo que este modo
+ del osciloscopio calcule una señal de la forma de la señal original entrante
+ al sistema.
+ El average aplicado fue de 
+\begin_inset Formula $8$
+\end_inset
+
+ (izquierda) y de 
+\begin_inset Formula $\text{4096}$
+\end_inset
+
+(derecha):
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2068,10 +2411,28 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoAverage8.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/senoAverage4096.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Señal de entrada Vs Digitalizada Modo 
+Señal de entrada Vs Salida Digitalizada Modo 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2080,30 +2441,6 @@ Average
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Espectro de la Señal Digitalizada
 \end_layout
 
 \end_inset
@@ -2129,8 +2466,76 @@ Se procedió a utilizar como entrada una señal
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
 
-GaussASDKASÑKDJASD.
- A continuación se exponen los resultados obtenidos:
+Gauss de 
+\begin_inset Formula $5V_{pp}$
+\end_inset
+
+ a 
+\begin_inset Formula $3.5KHz$
+\end_inset
+
+, con una frecuencia de muestreo de 
+\begin_inset Formula $900KHz$
+\end_inset
+
+ como en el caso de la señal senoidal.
+ Esta señal a medir se repite según la frecuencia de 
+\begin_inset Formula $3.5KHz$
+\end_inset
+
+ mencionada sin embargo posee armónicos de frecuencias más elevadas (atribuidos
+ a su salto en cada comienzo de la media campana) los cuales se ven atenuados
+ al pasar por el filtro antialias.
+ Con la imagen de la siguiente medición se pretende mostrar como son atenuados
+ estos armónicos de alta frecuencia, lo cual provoca que sea razonable que
+ la señal recuperada tampoco posea cambios bruscos en el tiempo (como sí
+ los tiene la señal de entrada) a pesar de un buen funcionamiento del mecanismo
+ 
+\begin_inset Formula $\sum\Delta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussFiltrada.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Filtro AntiAlias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aclarado esto, se procede a presentar las mismas mediciones que se han realizado
+ para el caso de la señal de entrada senoidal.
 \end_layout
 
 \begin_layout Standard
@@ -2139,6 +2544,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussDigitalizada.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2158,11 +2574,39 @@ Señal de entrada Vs Digitalizada
 \end_layout
 
 \begin_layout Standard
+A continuación se presenta la recuperación.
+ En cuanto a la señal con aliasing, esta fue recuperada con una frecuencia
+ de muestreo de 
+\begin_inset Formula $400KHz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussRecuperada.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussAlias.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2182,11 +2626,31 @@ Señal de entrada Vs Recuperada
 \end_layout
 
 \begin_layout Standard
+Nuevamente se presenta la salida del integrador diferencial, pero esta vez
+ con la señal de 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+Gauss:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussDifInt.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2206,11 +2670,33 @@ Señal de entrada Vs Salida Diferencial del Integrador
 \end_layout
 
 \begin_layout Standard
+También se realizó el promedio con el osciloscopio de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussAverage8.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussAverage4096.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2224,31 +2710,7 @@ Average
 \begin_inset Quotes erd
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Espectro de la Señal Digitalizada
+ (8 y 4096 Promedios)
 \end_layout
 
 \end_inset
@@ -2266,8 +2728,18 @@ Mediciones de Señal Sinc
 \end_layout
 
 \begin_layout Standard
-Se procedió a utilizar como entrada una señal SincASDKASÑKDJASD.
- A continuación se exponen los resultados obtenidos:
+Se procedió a utilizar como entrada una señal Sinc de 
+\begin_inset Formula $3V_{pp}$
+\end_inset
+
+ a una frecuencia de repetición de 500Hz.
+ Al igual que en los casos anteriores se utilizó la señal de clock a 
+\begin_inset Formula $900KHz$
+\end_inset
+
+.
+ A continuación se presentan todas las mediciones realizadas sobre esta
+ señal:
 \end_layout
 
 \begin_layout Standard
@@ -2276,6 +2748,17 @@ placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincDigitalizada.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2295,11 +2778,39 @@ Señal de entrada Vs Digitalizada
 \end_layout
 
 \begin_layout Standard
+A continuación se presenta la recuperación, para el caso sin alias relevante
+ y para el caso que presenta aliasing.
+ Para obtener este último se redujo la frecuecia de clock a 
+\begin_inset Formula $400KHz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincRecuperada.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincAlias.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2319,11 +2830,35 @@ Señal de entrada Vs Recuperada
 \end_layout
 
 \begin_layout Standard
+A continuación se representa la diferencia de las salidas del integrador
+ diferencial, calculada mediante la función 
+\begin_inset Quotes eld
+\end_inset
+
+Math
+\begin_inset Quotes erd
+\end_inset
+
+ del osciloscopio y se contrasta con la señal original:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
 status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincDifInt.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2343,11 +2878,48 @@ Señal de entrada Vs Salida Diferencial del Integrador
 \end_layout
 
 \begin_layout Standard
+Como ya se ha realizado con la señal senoidal y la 
+\begin_inset Formula $\frac{1}{2}Gauss$
+\end_inset
+
+, se expone el efecto de aplicar el modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+ del osciloscopio al medir al señal digital de salida del sistema.
+ Se utilizó un promedio de 8 muestras, y también se midió utilizando un
+ número más elevado, de 4096.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincAverage8.PNG
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/sincAverage4096.PNG
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2374,6 +2946,30 @@ Average
 
 \end_layout
 
+\begin_layout Subsection
+Sobre Tensión de Realimentación y Rango Dinámico
+\end_layout
+
+\begin_layout Standard
+A continuación se pretende exponer la limitación de rango dinámico que puede
+ producir la tensión que se realimenta en el restador e integrador del sistema.
+ Se realizó una medición sobre la recuperación de la señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ Gauss de 500Hz y 
+\begin_inset Formula $1.9V_{pp}$
+\end_inset
+
+ con una frecuencia de sampleo de 
+\begin_inset Formula $900KHz$
+\end_inset
+
+, mientras que la tensión de realimentación se disminuyó a la mitad con
+ respecto a las mediciones anteriores lo cual dió lugar a la saturación
+ de la salida como se muestra a continuación:
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -2382,14 +2978,33 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/medioGaussSaturacion.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Espectro de la Señal Digitalizada
+Señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ Gauss - Recuperación Saturada
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
