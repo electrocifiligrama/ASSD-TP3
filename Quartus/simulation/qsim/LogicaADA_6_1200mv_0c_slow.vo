@@ -95,7 +95,7 @@ tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
 // synopsys translate_off
-initial $sdf_annotate("LogicaADA_v.sdo");
+initial $sdf_annotate("LogicaADA_6_1200mv_0c_v_slow.sdo");
 // synopsys translate_on
 
 wire \EOC_integrado~input_o ;
