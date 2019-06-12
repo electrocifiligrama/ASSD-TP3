@@ -1,0 +1,2414 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+TP 3 ASSD - Sigma Delta Modulator and Conversor
+\end_layout
+
+\begin_layout Section
+Introducción 
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se pretenderá diseñar un conversor analógico
+ - digital a partir del siguiente esquemático:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático Base Propuesto 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este esquema corresponde al de un conversor/modulador de tipo 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma-Delta
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+), el cual será analizado en las siguientes secciones, se enumerarán sus
+ ventajas y se propondrán mejoras.
+\end_layout
+
+\begin_layout Standard
+Luego, se corroborarán las conclusiones del análisis mediante simulaciones
+ computacionales mediante el programa 
+\begin_inset Quotes eld
+\end_inset
+
+Simulink
+\begin_inset Quotes erd
+\end_inset
+
+ de Matlab y finalmente se realizarán mediciones experimentales del prototipo
+ cuyo diseño se arriba en este trabajo.
+\end_layout
+
+\begin_layout Section
+Marco Teórico
+\end_layout
+
+\begin_layout Standard
+El funcionamiento del conversor/modulador 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma-Delta
+\begin_inset Quotes erd
+\end_inset
+
+ se puede analizar de manera sencilla partiendo del conocimiento del modulador
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Delta
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $\triangle$
+\end_inset
+
+), que se ha tratado con anterioridad en el artículo.
+ En este último, se actualiza la salida digital según si se identifica un
+ incremento o decremento de la entrada con respecto de la salida anterior.
+ Para esto se realiza una diferencia entre estas dos señales (entrada vs
+ salida anterior) lo cual da motivo a nombrar al conversor/modulador) como
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Delta
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Luego, si se quisiera recuperar la señal análogica con este tipo de modulador
+ sería necesario integrar la señal digital de salida y luego eliminar las
+ componentes armónicas fuera de la banda de frecuencias de la señal que
+ originalmente ingreso al modulador (mediante filtro pasabajos).
+ En el caso del Sigma-Delta, se parte de la misma logica descripta para
+ el modulador Delta, sin embargo se simplifica las dos integraciones realizadas
+ en el anterior modulador en una sola, tal como lo muestran las siguientes
+ figuras:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Sigma Delta a partir de Modulador Delta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces en el lazo de realimentación del nuevo conversor/modulador en cuestión
+ no es necesaria una integración y tampoco lo es para recuperar la señal
+ analógica original, sino que estas dos integraciones se pueden tratar como
+ una operación lineal que se puede trasladar a la instancia inmediatamente
+ después a la realización de la diferencia.
+ Este hecho de realizar la diferencia y subsiguientemente integrar es al
+ cual se alude mediante el nombre 
+\begin_inset Quotes eld
+\end_inset
+
+Delta - Sigma
+\begin_inset Quotes erd
+\end_inset
+
+ o bien 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma-Delta
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+).
+ Vale aclarar que el sistema al cual se arribo mediante los diagramas es
+ un 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ de primer orden, pero se pueden obtener sistemas de ordenes superiores
+ al agregar mayor cantidad de realimentaciones o al incorporar varios sistemas
+ en cascada.
+ En este artículo solo se tratará con el sistema de primer orden.
+\end_layout
+
+\begin_layout Standard
+Luego, se obtuvo un modulador en el cual se resta a la entrada (mediante
+ la realimentación) una constante que es positiva en caso de que la salida
+ anterior (el resultado del promedio de las diferencias anteriores) haya
+ sido negativa y en caso contrario la constante a restar es negativa.
+ Esto hace posible que la integración sea de tan solo un 
+\begin_inset Quotes eld
+\end_inset
+
+delta
+\begin_inset Quotes erd
+\end_inset
+
+ lo cual da como resultado una menor cantidad de bits, lo cual trae consigo
+ multiples ventajas.
+ Sin embargo, para poder lograr esto en la práctica son necesarias algunas
+ consideraciones como por ejemplo el 
+\begin_inset Quotes eld
+\end_inset
+
+oversampling
+\begin_inset Quotes erd
+\end_inset
+
+ o la 
+\begin_inset Quotes eld
+\end_inset
+
+decimación
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Estos conceptos serán explicados a continuación, y además se planteará
+ matematicamente la transferencia del sistema conversor en cuestión para
+ poner aún más en evidencia sus características.
+\end_layout
+
+\begin_layout Subsection
+Transferencia y Noise Shaping
+\end_layout
+
+\begin_layout Standard
+A partir del diagrama teórico de 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+presentado anteriormente, se puede reemplazar cada bloque mediante su equivalent
+e matemático para poder calcular la función transferencia del sistema.
+ Entonces el diagrama del modelo matemático del sistema es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ modelado matemático
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este esquema, las operaciones que participan son la suma y la integración
+ (pasabajos en frecuencia).
+ Además, se tiene dos entradas 
+\begin_inset Formula $"X(s)"$
+\end_inset
+
+ e 
+\begin_inset Formula $"N(s)"$
+\end_inset
+
+ y la salida 
+\begin_inset Formula $"Y(s)"$
+\end_inset
+
+.
+ En cuanto a 
+\begin_inset Formula $N(s)$
+\end_inset
+
+, esta representa el ruido de cuantización que se introduce al cuantizar
+ la señal.
+ Este ruido se puede modelar mediante una variable aleatoria con distribución
+ uniforme en el intervalo 
+\begin_inset Formula $(-q;q)$
+\end_inset
+
+ siendo 
+\begin_inset Formula $"q"$
+\end_inset
+
+ el valor que representa el bit menos significativo de la señal digital.
+\end_layout
+
+\begin_layout Standard
+Por ende el ruido se puede pensar como una variable que para cada cuantización
+ toma un valor en el intervalo mencionado con igual probabilidad para cualquiera
+ de ellos, sin importar el espectro de la señal que es cuantizada.
+\end_layout
+
+\begin_layout Standard
+Luego, se obtiene la siguiente respuesta:
+\end_layout
+
+\begin_layout Standard
+Pasivando 
+\begin_inset Formula $X(s)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Y(s)=\frac{s}{s+1}.N(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pasivando 
+\begin_inset Formula $N(s)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Y(s)=\frac{1}{s+1}.X(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por superposición:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Y(s)=\frac{1}{s+1}.X(s)+\frac{s}{s+1}N(s)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando al integrador la tansformación foward:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Y(z)=z^{-1}.X(z)+(1-z^{-1}).N(z)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede observar de la expresión anterior, el sistema presenta una
+ respuesta de pasabajos en frecuencia para la señal 
+\begin_inset Formula $"x"$
+\end_inset
+
+ de entrada, mientras que forma un pasa-altos para el ruido de cuantización.
+ Esto último es de sumo interés para reducir el ruido en la conversión,
+ de hecho, si se aumentara el orden del sistema entonces aumentaría el orden
+ de la respuesta pasa-altos.
+ Esto es lo que se pretende representar en el siguiente gráfico:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Orden del Noise Shaping 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El hecho de que la respuesta al ruido uniforme de cuantización sea pasa-alto
+ provoca que el conversor sigma-delta sea de especial interés ya que produce
+ un efecto de 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+, es decir, mueve el ruido de cuantización a las altas frecuencias lo cual
+ es sumamente útil si se combina con la técnica de 
+\begin_inset Quotes eld
+\end_inset
+
+oversampling
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Esto último se explicará a continuación.
+\end_layout
+
+\begin_layout Subsection
+Oversampling
+\end_layout
+
+\begin_layout Standard
+Para lograr que la integración de la diferencia (operación 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+) se realize de manera que la salida digital modulada se corresponda con
+ la entrada, la realimentación debe actualizarse con la suficientemente
+ rapidez para no perder cambios de la señal de entrada, y para esto también
+ la salida debe actualizarse con esta suficiente rapidez.
+ Por esto es que para la implementación del 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ se realiza 
+\begin_inset Quotes eld
+\end_inset
+
+oversampling
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Esto quiere decir que la frecuencia de muestreo del sistema debe ser superior
+ a la de Nyquist.
+ Mayor sea esta frecuencia de muestreo, entonces se podrán detectar menores
+ cambios de la entrada, se reducirá el error de la conversión y además se
+ presentarán condiciones menos exigentes para algunas partes del sistema.
+ Estas, todas consecuencias de muestrear a una tasa mayor a la que indica
+ el límite de Nyquist, serán explicadas con detalle a continuación.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ventajas en el Filtrado
+\end_layout
+
+\begin_layout Standard
+Como primera medida, el hecho de que la frecuencia de muestreo 
+\begin_inset Formula $"f_{s}"$
+\end_inset
+
+ sea considerablemente mayor a la frecuencia de Nyquist implica que el espectro
+ de la señal digital presenta las repeticiones de la banda base separadas
+ de tal manera que los filtros necesarios para recuperar la señal analógica
+ y para eliminar el alias sean de un orden menor con respecto a los que
+ se deberían utilizar en caso de muestrear a la frecuencia de Nyquist.
+\end_layout
+
+\begin_layout Standard
+Esto se pone en evidencia en el siguiente esquema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oversampling - Separación de Espectros de Banda Base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Relación con Noise Shaping
+\end_layout
+
+\begin_layout Standard
+Una ventaja notable del oversampling, la cual provoca que el modulador/conversor
+ 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ resulte más eficiente con respecto a otros conversores, es el hecho de
+ la reducción del ruido de cuantización.
+ En efecto, como se ha mencionado anteriormente el ruido de cuantización
+ se puede modelar como si fuera una variable aleatoria con distribución
+ uniforme entre 
+\begin_inset Formula $"-q"$
+\end_inset
+
+ y 
+\begin_inset Formula $"q"$
+\end_inset
+
+, siendo 
+\begin_inset Formula $q$
+\end_inset
+
+ el valor que representa el bit menos significativo de la conversión.
+\end_layout
+
+\begin_layout Standard
+Entonces, para un señal muestreada a una frecuencia 
+\begin_inset Formula $f_{s}$
+\end_inset
+
+, se distribuye uniformemente el ruido de cuantización en el intervalo 
+\begin_inset Formula $(-\frac{f_{s}}{2};\frac{f_{s}}{2})$
+\end_inset
+
+.
+ Esto a su vez implica que si se aumenta la frecuencia 
+\begin_inset Formula $f_{s}$
+\end_inset
+
+ el ruido de cuantización se debe distribuir en un rango mayor de frecuencias
+ y por ende existirá menor cantidad de ruido unidad de frecuencia, ya que
+ el ruido total sigue siendo el mismo en todos los casos, solo que puede
+ variar el rango de la banda de frecuencias en el cual se debe distribuir
+ este.
+\end_layout
+
+\begin_layout Standard
+Dicho esto, si se tiene una señal limitada en banda, muestreada a una frecuencia
+ relativamente mucho mayor a la frecuencia de Nyquist, existirá ruido que
+ sea aportado en frecuencias mayores a la de Nyquist y por ende la banda
+ base de la señal será afectada por menor cantidad de ruido de cuantización.
+\end_layout
+
+\begin_layout Standard
+Aún más, el ruido de la banda base que esta reducido por la técnica de oversampl
+ing se reducirá aún más ya que el sistema produce el efecto de 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+ desplazando el ruido a las altas frecuencias.
+ La forma del espectro se puede visualizar en la siguiente figura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Respuesta al Ruido de Cuantización
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En consecuencia de lo explicado hasta aquí, con el sistema de 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ es posible implementar conversiones dando como resultado el mismo error
+ de cuantización en relación a otros sistemas, pero pudiendo introducir
+ mayor cantidad de ruido al sistema, es decir, pudiendo reducir la cantidad
+ de bits.
+ A continuación se analizará aún más este último hecho.
+\end_layout
+
+\begin_layout Subsubsection
+Reducción de Bits
+\end_layout
+
+\begin_layout Standard
+Como se ha mencionado anteriormente, el conversor/modulador 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ permite implementar una conversión con un ruido de cuantización dado pero
+ con menor cantidad de bits que los utilizados por otros sistemas debido
+ al 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+ y al 
+\begin_inset Quotes eld
+\end_inset
+
+Oversampling
+\begin_inset Quotes erd
+\end_inset
+
+.
+ A continuación se pretende describir esto matemáticamente:
+\end_layout
+
+\begin_layout Standard
+Sea la frecuencia de oversampling 
+\begin_inset Formula $"fos"$
+\end_inset
+
+, mientras que 
+\begin_inset Formula $"fs"$
+\end_inset
+
+ corresponde a la frecuencia de sampleo intrínseca del sistema de procesamiento
+ de 
+\begin_inset Formula $"n"$
+\end_inset
+
+ bits, entonces se tiene que 
+\begin_inset Formula $fos=L.fs$
+\end_inset
+
+ siendo 
+\begin_inset Formula $"L"$
+\end_inset
+
+ una constante multiplicativa.
+\end_layout
+
+\begin_layout Standard
+En cuanto a la cuantización, 
+\begin_inset Formula $q=A2^{-n};q_{os}=A.2^{-n_{os}}$
+\end_inset
+
+, siendo 
+\begin_inset Formula $"A"$
+\end_inset
+
+ el valor máximo de la señal.
+ Luego:n
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\sigma_{\varepsilon}^{2}=\frac{q^{2}}{12};\sigma_{\varepsilon os}^{2}=\frac{q_{os}^{2}}{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por otro lado, analizando la densidad espectral de potencia de la respuesta
+ al ruido de cuantización, se puede plantear la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $S_{\varepsilon}(f)=|H_{NS}|^{2}.\frac{\sigma_{\varepsilon os}^{2}}{fos}\Rightarrow\sigma_{\varepsilon}^{2}=\intop_{\frac{-fs}{2}}^{\frac{fs}{2}}|H_{NS}|^{2}.\frac{\sigma_{\varepsilon os}^{2}}{fos}.df=\intop_{\frac{-fs}{2}}^{\frac{fs}{2}}|2.sen(\frac{\pi.f}{fos})|^{2}.\frac{\sigma_{\varepsilon os}^{2}}{fos}.df$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\Rightarrow\Delta n=n-n_{os}=\frac{3}{2}log_{2}(L)-\frac{log_{2}(\frac{\pi^{2}}{3}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con estas expresiones, se puede concluir que para un sistema con frecuencia
+ de trabajo 
+\begin_inset Formula $"fs"$
+\end_inset
+
+ de 8 bits, se puede realizar la conversión con el sistema 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ implementando el oversampling con un factor de 
+\begin_inset Formula $"L"$
+\end_inset
+
+ igual a 64 (si 
+\begin_inset Formula $fos=64.fs\Rightarrow\Delta n\simeq8.14$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Subsection
+Decimación
+\end_layout
+
+\begin_layout Standard
+Hasta aquí se ha expuesto la importancia de la técnica de oversampling para
+ la conversión 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+.
+ Sin embargo, la salida digital de este conversor es enrealidad una modulación
+ por ancho de pulso a una frecuencia 
+\begin_inset Formula $fos=L.fs$
+\end_inset
+
+.
+ Para poder interpretar esta señal digitalizada con un procesador, por ejemplo,
+ que trabaja con una frecuencia de muestreo 
+\begin_inset Formula $fs$
+\end_inset
+
+ se deben promediar las muestras de salida del modulador/conversor generar
+ nuevas muestras a frecuencia 
+\begin_inset Formula $fs$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es decir, cada 
+\begin_inset Formula $L$
+\end_inset
+
+ muestras del modulador se debe generar una nueva muestra para el sistema
+ de procesamiento y asi poder lograr reducir la frecuencia de sampleo para
+ que sea acorde a la del procesador mencionado.
+ Este proceso descripto en término del tiempo, se denomina decimación.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, puede analizarse en el campo de la frecuencia.
+ Este análisis se basa en tener en cuenta que el espectro de la señal digital
+ modulada proveniente del modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ es la repetición del espectro según la frecuencia 
+\begin_inset Formula $fos$
+\end_inset
+
+ de la banda base de la señal original con ancho de banda 
+\begin_inset Formula $f_{B}=\frac{f_{NYQUIST}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+SEGUIR ESTA PARTE DALE DALEEEEEEEEEEEE
+\end_layout
+
+\begin_layout Section
+Simulaciones de Simulink - Matlab
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se procede a mostrar la simulación mediante 
+\begin_inset Quotes eld
+\end_inset
+
+Simulink
+\begin_inset Quotes erd
+\end_inset
+
+ del modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+.
+ Para esto se utilizó el siguiente esquema para una simulación idealizada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama - Simulación Idealizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A partir de este modelo, se procederá a realizar diversar simulaciones como
+ respuesta al impulso del sistema, espectro de ruido, etc.
+\end_layout
+
+\begin_layout Subsection
+Simulación de Respuesta al Impulso
+\end_layout
+
+\begin_layout Subsection
+Simulación de Espectro de Ruido
+\end_layout
+
+\begin_layout Standard
+ANTES DEL DECIMADOR Y DESPUES DEL DECIMADOR (ESPECTRO DE RUIDO CON QUE ENTRADA??
+??)
+\end_layout
+
+\begin_layout Subsection
+Simulación del Espectro de Salida con Entrada Senoidal
+\end_layout
+
+\begin_layout Subsection
+Incremento de la Cantidad de Bits
+\end_layout
+
+\begin_layout Standard
+QUE SUCEDE, COMO SE MODIFICA EL ESPECTRO DE RUIDO Y DE LA SEÑAL
+\end_layout
+
+\begin_layout Subsection
+Decimador
+\end_layout
+
+\begin_layout Standard
+EXPLICAR Y GRAFICAR LA RESPUESTA EN FRECUENCIA
+\end_layout
+
+\begin_layout Section
+Diseño e Implementación
+\end_layout
+
+\begin_layout Standard
+En esta parte del artículo se propone la implementación de un modulador
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma - Delta
+\begin_inset Quotes erd
+\end_inset
+
+ de 1 bit a partir del esquemático que se expuso en la introducción.
+ A modo de análisis del modelo dado como base de diseño se proceden a identifica
+r los distintos bloques representativos del circuito mediante la siguiente
+ imagen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Identificación de Bloques del Circuito Base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En primer lugar, se logra identificar que se tiene una entrada diferencial
+ (bloque color azul) al bloque de capacitores switcheados (bloque color
+ amarillo).
+ Este bloque de capacitores switcheados consta de dos capacitores que se
+ exponen a distintas señales según se switchea una llave mediante una señal
+ de 
+\begin_inset Quotes eld
+\end_inset
+
+clock
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Uno de estos capacitores corresponde a la fase positiva de la señal mientras
+ que el capacitor restante se corresponde con la fase negativa de la señal
+ de entrada.
+\end_layout
+
+\begin_layout Standard
+En un semiciclo de clock los capacitores se conectan a la entrada y a 
+\begin_inset Quotes eld
+\end_inset
+
+tierra
+\begin_inset Quotes erd
+\end_inset
+
+, produciendose la carga de los mismos, mientras que durante el otro semiciclo
+ se conectan los circuitos activos con amplificadores operacionales y a
+ una tensión de referencia inyectada por una realimentación de la salida.
+ Este mecanismo da lugar al bloque integrador de la resta 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ (bloque color rojo), produciendose la integración debido a los operacionales
+ en dicha configuración y siendo la resta entre la señal de entrada y la
+ señal realimentada.
+\end_layout
+
+\begin_layout Standard
+En cuanto al bloque cuantizador (bloque color negro), este consta de un
+ comparador que luego se conecta a un flip flop que actualiza el valor de
+ su salida por cada flanco de clock.
+\end_layout
+
+\begin_layout Standard
+En fin, se lograron corresponder las partes del circuito a los bloques consituye
+ntes del conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+, sin embargo faltan algunas especificaciones importantes, como por ejemplo
+ la conversión digital a analógica de la señal de realimentación, la sincronizac
+ión del clock en relación a los 
+\begin_inset Quotes eld
+\end_inset
+
+switches
+\begin_inset Quotes erd
+\end_inset
+
+ de las llaves, e incluso se podrían proponer mejoras al circuito en orden
+ de asegurar un mejor funcionamiento.
+ Esto último es la motivación de lo que sigue en el artículo, en las cuales
+ se modificará levemente el diseño explicando cada paso con detalle.
+\end_layout
+
+\begin_layout Subsection
+Filtros Antialias y Recuperador
+\end_layout
+
+\begin_layout Standard
+En el esquemático base no se encuentra el filtro antialias del sistema ni
+ tampoco el filtro recuperador, los cuales son cruciales para el correcto
+ funcionamiento del sistema.
+ Para implementar cada uno de estos se procedió a implementar una celda
+ Sallen Key de segundo orden.
+ Como la frecuencia de sampleo se espera que sea relativamente alta, al
+ menos 32 veces mayor a la frecuencia de Nyquist, y como se espera lograr
+ una frecuencia de oversampling de 
+\begin_inset Formula $1MHz$
+\end_inset
+
+, se decidió realizar ambos filtros con una frecuencia de corte 
+\begin_inset Formula $f_{c}=\frac{1000KHz}{(2).(32)}=\frac{f_{NYQUIST}}{2}=15KHz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En cuanto al orden de los filtros, para el recuperador no es necesario un
+ alto debido a que la frecuencia de sampleo es ampliamente superior a la
+ de Nyquist, mientras que para el antialias tampoco ya que ña señal de entrada
+ a utilizar ya es analógica y solo es de interes eliminar componentes de
+ altas frecuencias, relativamente mucho mayores a la frecuencia de corte
+ de 
+\begin_inset Formula $15KHz$
+\end_inset
+
+, que además no poseen una amplitud significativa con respecto al piso de
+ ruido.
+\end_layout
+
+\begin_layout Subsection
+Diferenciador
+\end_layout
+
+\begin_layout Standard
+Luego de ingresar la señal por el filtro antialias, para generar un sistema
+ con mayor grado de inmunidad al ruido, se decide utilizar un buffer y un
+ operacional en configuración inversora con unitaria (
+\begin_inset Formula $ganancia\equiv-1$
+\end_inset
+
+) para generar una señal 
+\begin_inset Formula $+V_{in}$
+\end_inset
+
+ y otra 
+\begin_inset Formula $-V_{in}$
+\end_inset
+
+y así poder plantear el circuito de manera diferencial.
+\end_layout
+
+\begin_layout Subsection
+Integrador 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para analizar el bloque que integra la diferencia entre la entrada y la
+ salida, se puede observar el siguiente circuito analógico tan solo compuesto
+ por un operacional, capacitores y resistencias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado este esquema, se procede a resolver el circuito planteando las siguientes
+ ecuaciones:
+\end_layout
+
+\begin_layout Standard
+Pasivando 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\begin{cases}
+\frac{V_{in}-V^{+}}{R}=\frac{V^{+}}{R}+\frac{V^{+}-V_{o1}}{Rx//\frac{1}{sC}}\\
+\frac{-V^{+}}{R}+\frac{V_{o2}}{Rx//\frac{1}{sC}}=\frac{V^{+}+V_{in}}{R}
+\end{cases}\Rightarrow V_{o1}-V_{o2}=-2\frac{Rx//\frac{1}{sC}}{R1}.Vin$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analogamente, pasivando 
+\begin_inset Formula $V_{in}$
+\end_inset
+
+ se obtiene:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o1}-V_{o2}=2\frac{Rx//\frac{1}{sC}}{R1}.V_{REF}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por superposición:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o1}-V_{o2}=2\frac{Rx//\frac{1}{sC}}{R1}.(V_{REF}-V_{in})=\frac{2Rx}{R}\frac{(V_{REF}-V_{in})}{(1+sC.Rx)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para este integrador diferencial, la resistencia 
+\begin_inset Formula $"Rx"$
+\end_inset
+
+ solo es necesaria para casos en los que se trabaja con señales que posean
+ armónicos de baja frecuencia o de continua de modo que pudieran 
+\begin_inset Quotes eld
+\end_inset
+
+desactivar
+\begin_inset Quotes erd
+\end_inset
+
+ el lazo de realimentación en caso de que solo se contara con el capacitor
+ en el mismo.
+ Si se trabaja solo con frecuencias relativamente altas de modo que sea
+ posible evitar la incorporación de 
+\begin_inset Formula $Rx$
+\end_inset
+
+, la expresión que determina la integración sería la siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o1}-V_{o2}=2.\frac{(V_{REF}-V_{in})}{sC.R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por otro lado, si se intercambiaran las resistencias por su equivalente
+ en capacitores switcheados se podría obtener un esquema similar al propuesto
+ inicialmente.
+ Esto en la práctica conlleva una ventaja ya que al momento de realizar
+ un circuito integrado de evita el uso de resistencias.
+ En cuanto al análisis, permite calcular la transferencia mediante transformada
+ Z.
+ A continuación se propondra el integrador con la incorporación de capacitores
+ switcheados y mediante un nuevo análisis.
+\end_layout
+
+\begin_layout Subsubsection
+Capacitores Switcheados
+\end_layout
+
+\begin_layout Standard
+Para realizar un integrador con capacitores switcheados se debe tener en
+ cuenta es posible obtener una resistencia equivalente 
+\begin_inset Formula $R=\frac{1}{f.Cs}$
+\end_inset
+
+ mediante el siguiente circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito de capacitor switcheado - R equivalente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la expresión de la resistencia, 
+\begin_inset Formula $"f"$
+\end_inset
+
+ representa la frecuencia a la cual conmutan las llaves que controlan las
+ llaves de los capacitores.
+\end_layout
+
+\begin_layout Standard
+Incorporando esto al integrador, se propone el siguiente diseño para el
+ integrador:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Integrador de la Resta- Versión con Capacitores Switcheados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Semiciclo 
+\begin_inset Quotes eld
+\end_inset
+
+Hold
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Semiciclo 
+\begin_inset Quotes eld
+\end_inset
+
+Sample
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede notar que en el semiciclo de 
+\begin_inset Quotes eld
+\end_inset
+
+hold
+\begin_inset Quotes erd
+\end_inset
+
+, el capacitor que conmuta mientras que la salida del integrador mantiene
+ (
+\begin_inset Quotes eld
+\end_inset
+
+hold
+\begin_inset Quotes erd
+\end_inset
+
+) el valor de la muestra anterior, mientras que en el semiciclo de muestreo
+ (
+\begin_inset Quotes eld
+\end_inset
+
+sample
+\begin_inset Quotes erd
+\end_inset
+
+) se actualiza la muestra en la salida.
+\end_layout
+
+\begin_layout Standard
+Para calcular una expresión para la integración, se puede utilizar la transforma
+ción bilineal 
+\begin_inset Formula $s\leftarrow\frac{2f.(z-1)}{(z+1)}$
+\end_inset
+
+ obteniendose lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $V_{o2}-V_{o1}=\frac{Cs(V_{in}-V_{REF}).(z+1)}{C.(z-1)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aquí se puede ver la respuesta pasabajos, según la transformada Z de la
+ respuesta en tiempo discreto.
+\end_layout
+
+\begin_layout Standard
+En cuanto al valor del capacitor 
+\begin_inset Formula $"C_{s}",$
+\end_inset
+
+es deseable que no tome un valor elevado de capacitancia debido a que podría
+ generar corrientes elevadas al momento de conmutar que podrían deteriorar
+ las llaves.
+ Por otro lado, debe ser de un valor de capacitancia considerablemente más
+ elevado al de las capacidades parásitas del circuito (del orden de los
+ 
+\begin_inset Formula $10pF$
+\end_inset
+
+) para que sea válido el análisis realizado.
+ Dicho esto, un valor de 
+\begin_inset Formula $330pF$
+\end_inset
+
+ sería correcto.
+ 
+\end_layout
+
+\begin_layout Standard
+En cuanto al capacitor 
+\begin_inset Formula $"C"$
+\end_inset
+
+, se elige el valor de 
+\begin_inset Formula $330pF$
+\end_inset
+
+ para que el factor de ganancia 
+\begin_inset Formula $\frac{Cs}{C}$
+\end_inset
+
+sea igual a la unidad.
+\end_layout
+
+\begin_layout Standard
+Sobre el operacional a utilizar, es de interés que este cuente con el suficiente
+ slew rate para satisfacer la variaciones de corrientes que se pueden dar
+ a la salida del integrador, por ende el circuito integrado 
+\begin_inset Quotes eld
+\end_inset
+
+LM833
+\begin_inset Quotes erd
+\end_inset
+
+ se puede considerar una buena opción para el diseño.
+\end_layout
+
+\begin_layout Standard
+Finalmente, para realizar las conmutaciones, se puede utilizar el mutiplexor
+ 
+\begin_inset Quotes eld
+\end_inset
+
+CD4053
+\begin_inset Quotes erd
+\end_inset
+
+, alternando las conexiones de los capacitores según una señal de control
+ (un clock, por ejemplo) y decidiendo el valor de 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+ según el valor de la salida digital del sistema.
+ Para este último caso, el mutiplexor funciona implicitamente como el conversor
+ digital analógico (DAC) de la realimentación.
+\end_layout
+
+\begin_layout Subsubsection
+Generación de 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para generar la tensión de 
+\begin_inset Formula $"V_{REF}"$
+\end_inset
+
+ utilizada para el análisis del integrador, se procedió a utilizar dos regulador
+es lineales de tensión para generar +5V y -5V y luego se utilizaron operacionale
+s para poder variar el valor absoluto de la tensión de referencia y así
+ poder realizar mediciones con distintas tensiones de realimentación.
+\end_layout
+
+\begin_layout Subsection
+Cuantizador
+\end_layout
+
+\begin_layout Standard
+El bloque cuantizador es el encargado de traducir la entrada al valor digital
+ representable más cercano al real.
+ En este caso, el cuantizador es de 1 bit, por ende solo hay dos estados
+ posibles a los cuales cuantizar: 
+\begin_inset Formula $"1"$
+\end_inset
+
+ o 
+\begin_inset Formula $"0"$
+\end_inset
+
+.
+ Para esto, solo hace falta un comparador que tenga como entradas la salida
+ del integrador diferecial e ingrese el resultado digital a un flip flop
+ de tipo 
+\begin_inset Formula $"D"$
+\end_inset
+
+ para poder actualizar la salida en cada flanco de una señal de control.
+\end_layout
+
+\begin_layout Standard
+En el esquemático base propuesto al inicio, se sugiere la utilización del
+ comparador 
+\begin_inset Quotes eld
+\end_inset
+
+LM311
+\begin_inset Quotes erd
+\end_inset
+
+ y el flip flop D 
+\begin_inset Quotes eld
+\end_inset
+
+74HC74
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Esto podría funcionar en la práctica de no ser por la incompatibilidad
+ de las corrientes de salida del comparador y de entrada al flip flop, ya
+ que el LM311 puede egresar por su pin de salida una corriente mayor a 20mA
+ mientras que el flip flop D solo admitiría hasta 20mA (según hoja de datos).
+ Una solución a esto es implementar el circuito con circuitos integrados
+ que sean compatibles en el sentido que se ha mencionado, pero si solo se
+ tuvieran estos elementos a disposición se podrían utilizar flip flops 
+\begin_inset Quotes eld
+\end_inset
+
+D
+\begin_inset Quotes erd
+\end_inset
+
+ 74hc74 poniendo en paralelo los pines de entrada 
+\begin_inset Quotes eld
+\end_inset
+
+D
+\begin_inset Quotes erd
+\end_inset
+
+ y reduciendo así la corriente de entrada de cada flip flop para lograr
+ el correcto funcionamiento.
+ Evidentemente este no es el caso más eficiente, sin embargo fue lo que
+ se tuvo que realizar en la práctica.
+\end_layout
+
+\begin_layout Subsection
+Clock
+\end_layout
+
+\begin_layout Standard
+La señal de clock del circuito a implementar es la señal que actualiza la
+ salida del flip flop D (actualiza el valor de salida y el de la señal de
+ realimentación) y a su vez controla la conmutación de las llaves de los
+ capacitores switcheados en el integrador.
+\end_layout
+
+\begin_layout Standard
+Esta señal de control se debe sincronizar de manera que en el momento en
+ que se actualiza la salida del flip flop (flanco ascendente de clock) los
+ capacitores que conmutan se encuentren en el semiciclo de 
+\begin_inset Quotes eld
+\end_inset
+
+hold
+\begin_inset Quotes erd
+\end_inset
+
+ para evitar valores erróneos debido a transitorios del semiciclo de 
+\begin_inset Quotes eld
+\end_inset
+
+sample
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Teniendo esto en cuenta, se puede utilizar la misma señal de clock para
+ ambos controles.
+\end_layout
+
+\begin_layout Standard
+En cuanto a la implementación circuital del clock, se utilizó el 
+\begin_inset Formula $"VCO"$
+\end_inset
+
+ (Voltage Controlled Voltage) incorporado en el PLL 
+\begin_inset Quotes eld
+\end_inset
+
+CD4046
+\begin_inset Quotes erd
+\end_inset
+
+, configurandolo de manera que sea posible oscilar en un rango de frecuencias
+ entre 
+\begin_inset Formula $60KHz$
+\end_inset
+
+ y 
+\begin_inset Formula $1MHz$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Esquemático Final
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan imagenes de los circuitos esquemáticos que componen
+ el prototipo final:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático General
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Integrador y Cuantizador - Generador de 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Diferenciador - Clock
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemáticos: Filtros Antialias y Recuperador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mediciones
+\end_layout
+
+\begin_layout Standard
+Las mediciones que se consideraron pertinentes fueron, en primer lugar la
+ señal de clock, luego la recuperación de la señal de entrada, la señal
+ digital de salida y la señal diferencial de salida del integrador.
+ Luego, se procedió a realizar mediciones del espectro de la señal de salida
+ digital.
+\end_layout
+
+\begin_layout Standard
+En cuanto a las señales de entradas utilizadas, se propusieron señales senoidale
+s, 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+Gauss y Sinc.
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal de Control - Clock
+\end_layout
+
+\begin_layout Standard
+Ante todo, se procede a exponer las mediciones realizadas para el oscilador
+ utilizado como señal de control, ya que su correcto funcionamiento es crucial
+ para obtener resultados satisfactorios.
+ A continuación se pone en evidencia su funcionamiento para distintas frecuencia
+s:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=60KHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=500KHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medición de Clock - 
+\begin_inset Formula $f=1MHz$
+\end_inset
+
+ - 
+\begin_inset Formula $DC=50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal Senoidal
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal senoidal de ASÑDKAJSKÑD 
+\begin_inset Formula $V_{pp}$
+\end_inset
+
+ con valor medio cero.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+Gauss
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+GaussASDKASÑKDJASD.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mediciones de Señal Sinc
+\end_layout
+
+\begin_layout Standard
+Se procedió a utilizar como entrada una señal SincASDKASÑKDJASD.
+ A continuación se exponen los resultados obtenidos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Recuperada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Salida Diferencial del Integrador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de entrada Vs Digitalizada Modo 
+\begin_inset Quotes eld
+\end_inset
+
+Average
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de la Señal Digitalizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Análisis de Resultados
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\end_body
+\end_document
