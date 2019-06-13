@@ -78,7 +78,7 @@
 \begin_body
 
 \begin_layout Part
-TP 3 ASSD - Sigma Delta Modulator and Conversor
+TP 3 ASSD - Conversor y Modulador Sigma Delta
 \end_layout
 
 \begin_layout Section
@@ -221,14 +221,14 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/delta2sigmadelta1.PNG
-	scale 30
+	scale 40
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/delta2sigmadelta2.PNG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -358,7 +358,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/mathModelDiagram.PNG
-	scale 50
+	scale 55
 
 \end_inset
 
@@ -514,7 +514,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/ordenNoiseShaping.PNG
-	scale 50
+	scale 55
 
 \end_inset
 
@@ -962,10 +962,73 @@ Por otro lado, puede analizarse en el campo de la frecuencia.
 \end_inset
 
 .
+ Al aplicar la decimación, la distrancia entre los espectros de banda base
+ repetidos y distanciados según la frecuencia 
+\begin_inset Formula $f_{os}$
+\end_inset
+
+ se acercan ya que la frecuencia de muestreo pasa a ser de 
+\begin_inset Formula $fs=\frac{f_{os}}{L}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-SEGUIR ESTA PARTE DALE DALEEEEEEEEEEEE
+Por último, el hecho de realizar un promedio generar las nuevas muestras
+ a frecuencia 
+\begin_inset Formula $f_{s}$
+\end_inset
+
+, implica aplicar un filtro pasabajos digital, cuya frecuencia de corte
+ debe ser cercana (pero aún mayor) a la frecuencia de ancho de banda de
+ la señal.
+ Esto se puede realizar mediante un filtro IIR de alto orden, pero para
+ evitar las exigencias de este tipo de implementación, se logra realizar
+ un pasabajos partiendo de la implementación de filtros FIR de tipo 
+\begin_inset Quotes eld
+\end_inset
+
+Comb
+\begin_inset Quotes erd
+\end_inset
+
+.
+ En efecto, el hecho de que cada nueva muestra sea un promedio de muestras
+ de la señal original se puede pensar como un filtro FIR ya que se da con
+ la siguiente expresión:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $y(n)=x(n)+x(n-1)+x(n-2)+...+x(n-M)\Rightarrow H(z)=\frac{Y(z)}{X(z)}=1+z^{-1}+z^{-2}+...+z^{-M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, este filtro Comb se corrige para adoptar la forma de un pasabajos
+ digital (espectro periódico), lo cual es conveniente para eliminar cualquier
+ distorsión que pueda introducirse en la banda de frecuencia de interés.
+ En el caso del modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ es de gran utilidad el pasabajos de la decimación para eliminar el ruido
+ de cuantización que anteriormente fue afectado por el efecto de 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Es decir que este efecto de Noise Shaping se complementa con el oversampling
+ no solo para el caso en que se recupera la señal mediante un filtro pasabajos
+ analógico sino que también lo hace para el caso en que se procesa la señal
+ digital para lo cual se aplica el pasabajos al decimar.
 \end_layout
 
 \begin_layout Section
@@ -1000,7 +1063,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquemaSIMULINK.PNG
-	scale 50
+	scale 55
 
 \end_inset
 
@@ -1046,7 +1109,83 @@ Simulación de Respuesta al Impulso
 \end_layout
 
 \begin_layout Standard
+Para analizar el comportamiento del sistema, además de su estabilidad, es
+ conveniente simular la respuesta impulsiva del mismo.
+ A continuación se expone la respuesta de ingresar con un impulso al sistema
+ mostrado en la introducción de esta sección de simulación, habiendo sido
+ medida a la salida del decimador:
+\end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/impulseResponseSimulink.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación Respuesta al Impulso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De la imagen se puede notar la excitación (impulso), en la cual el eje vertical
+ representa la amplitud en Volts (1 Volt para el caso del impulso).
+ En cuanto a la respuesta, esta se manifiesta luego de un retardo del orden
+ de los microsegundos mediante una leve amplitud (relativamente baja con
+ respecto a la amplitud del impulso) y luego de un tiempo menor al milisegundo
+ vuelve a anularse como es de esperar, ya que como se ha visto antes el
+ decimador presenta una respuesta impulsiva finita al ser realizado con
+ filtros 
+\begin_inset Quotes eld
+\end_inset
+
+FIR
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En fin, lo que se logra visualizar es el resultado de la diferencia que
+ se ingresa en el integrador (introducida brevemente por el impulso), que
+ logra que durante un tiempo relativamente pequeño el promedio de la señal
+ digital modulada (salida del cuantizador) sea distinto a cero.
+ Luego de que esta diferencia deja de existir (la exitación cesó) se genera
+ nuevamente una modulación tal que el promedio de la señal digital del módulo
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma Delta
+\begin_inset Quotes erd
+\end_inset
+
+ sea igual al valor cero.
 \end_layout
 
 \begin_layout Subsection
@@ -1054,12 +1193,154 @@ Simulación de Espectro de Ruido
 \end_layout
 
 \begin_layout Standard
-ANTES DEL DECIMADOR Y DESPUES DEL DECIMADOR (ESPECTRO DE RUIDO CON QUE ENTRADA??
-??)
+En orden a exponer mediante simulación computacional la forma en la que
+ el modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ disminuye el ruido de cuantización, se presenta el resultado de simular
+ el espectro de ruido antes del decimador y despues del mismo: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroSimulink.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación Espectro de Ruido de Cuantización - Antes y Después del Decimador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vale aclarar que para realizar esta simulación se pasivo la entrada y se
+ impuso correspondientemente dentro del lazo del sistema un ruido blanco
+ de una potencia que simula la introducida por el hecho de cuantizar con
+ un cuantizador de 1 bit.
+\end_layout
+
+\begin_layout Standard
+En la imagen se puede notar el espectro propio del ruido blanco (espectro
+ de color rojo), representadose la frecuencia en el eje horizontal (en KHz)
+ y la potencia en 
+\begin_inset Formula $dBm$
+\end_inset
+
+ en el eje vertical.
+ La respuesta a este ruido introducido al sistema se traduce en el espectro
+ correspondiente a la señal digital antes del decimador (espectro de color
+ amarillo) el cual manifiesta una atenuación en las bajas frecuencias con
+ respecto a la señal de ruido original, tal como se predijo en el análisis
+ del marco teórico.
+\end_layout
+
+\begin_layout Standard
+En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
+ de pasabajos, como también se ha mencioando antes.
+ Esto tiene sentido ya que la decimación realiza un promedio, pero además
+ se vale del noise shaping que se puede notar mediante el espectro antes
+ del decimador para asegurar que el ruido de cuantización tenga el menor
+ efecto posible sobre la decimación en cuestión.
 \end_layout
 
 \begin_layout Subsection
 Simulación del Espectro de Salida con Entrada Senoidal
+\end_layout
+
+\begin_layout Standard
+Al sistema propuesto en la introducción de esta sección de simulación se
+ introdujo una señal senoidal de 
+\begin_inset Formula $1KHz$
+\end_inset
+
+ y se obtuvo el siguiente resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroSen1KHzSimulink.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación Espectro de Salida ante Entrada Senoidal - 
+\begin_inset Formula $f=1KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el gráfico, cuyo eje vertical representa la potencia en dBm y su eje
+ horizontal represente la frecuencia en KHz, se puede observar el espectro
+ a la salida del sistema (luego del decimador, espectro de color celeste)
+ y el espectro de ruido antes del decimador que se encuentra filtrado para
+ las bajas frecuencias.
+ 
+\end_layout
+
+\begin_layout Standard
+En el espectro celeste se pueden notar los picos de mayor potencia en las
+ frecuencias de 
+\begin_inset Formula $\pm1KHz$
+\end_inset
+
+, correspondientes a la frecuencia de la señal senoidal de entrada, mientras
+ que la potencia del ruido de cuantización en un rango cercano a dichas
+ frecuencias se observan relativamente altamente atenuados, coincidiendo
+ esto con el análisis de Noise Shaping realizado hasta el momento.
 \end_layout
 
 \begin_layout Subsection
@@ -1097,7 +1378,39 @@ El hecho de implementar de la decimación en varias etapas presenta la ventaja
 \end_layout
 
 \begin_layout Standard
-EXPLICAR Y GRAFICAR LA RESPUESTA EN FRECUENCIA
+A continuación se presenta la respuesta en frecuencia que permite visualizar
+ Simulink del primer decimador:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Respuesta en Frecuencia Decimador 1:4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede notar del gráfico que su forma coincide con la de un pasabajos
+ realizado a partir de filtros Comb como ya se ha mencionado anteriormente
+ en el análisis del marco teórico.
 \end_layout
 
 \begin_layout Section
@@ -1131,7 +1444,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoBASE.png
-	scale 50
+	scale 55
 
 \end_inset
 
@@ -1224,8 +1537,9 @@ switches
 
  de las llaves, e incluso se podrían proponer mejoras al circuito en orden
  de asegurar un mejor funcionamiento.
- Esto último es la motivación de lo que sigue en el artículo, en las cuales
- se modificará levemente el diseño explicando cada paso con detalle.
+ Esto último es la motivación de las secciones que siguen en el artículo,
+ en las cuales se modificará levemente el diseño explicando cada paso con
+ detalle.
 \end_layout
 
 \begin_layout Subsection
@@ -1762,7 +2076,7 @@ Generación de
 \begin_inset Formula $V_{REF}$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1908,6 +2222,117 @@ CD4046
 
 .
  
+\end_layout
+
+\begin_layout Subsection
+Sobre Rango Dinámico
+\end_layout
+
+\begin_layout Standard
+En orden a analizar la máxima amplitud de señal de entrada para la cual
+ el modulador/conversor funciona correctamente se presta especial atención
+ a los valores de tensión de alimentación de los operacionales del circuito
+ como así también al valor de tensión 
+\begin_inset Formula $"V_{REF}"$
+\end_inset
+
+ que se realimenta en el sistema.
+\end_layout
+
+\begin_layout Standard
+En cuanto a las tensiones de alimentación de los operacionales, estos determinan
+ el valor de saturación de cada operacional (según el tipo de operacional
+ utilizado) y esto a su vez limita la entrada.
+ Por otro lado, para que la señal de realimentación produzca su efecto correspon
+diente, el valor de tensión de la misma debe superar en valor absoluto al
+ valor máximo de tensión de la señal de entrada, ya que en caso contrario
+ existirían valores de tensión de la entrada tales que el resultado de la
+ resta entre esta entrada y la realimentación sea siempre positiva o siempre
+ negativa según las características de la señal de entrada.
+ Esto quiere decir que la realimentación no podría corregir a la señal de
+ salida (almenos para los instantes en los cuales la señal de entrada supera
+ en valor absoluto a la señal de realimentación), invirtiéndose así la realiment
+ación (de negativa a positiva) y por ende dicha señal de salida saturaría.
+\end_layout
+
+\begin_layout Standard
+Además, en relación a la tensión de la señal de realimentación, mayor sea
+ su valor, más 
+\begin_inset Quotes eld
+\end_inset
+
+rapidamente
+\begin_inset Quotes erd
+\end_inset
+
+ se lograría corregir la señal de salida.
+ Sin embargo, la tensión 
+\begin_inset Formula $"V_{REF}"$
+\end_inset
+
+ no debe ser lo suficientemente elevada tal que el valor de esta tensión
+ sumado a la tensión de entrada supere la tensión de saturación de los operacion
+ales que se encuentran en el integrador diferencial, según el diseño que
+ se ha desarrollado hasta aquí.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente, para el caso del diseño de este artículo se consideró óptimo
+ elegir una tensión de alimentación para los operacionales de 
+\begin_inset Formula $\pm15V$
+\end_inset
+
+ y una tensión 
+\begin_inset Formula $V_{REF}=\pm5V$
+\end_inset
+
+ lograda con los reguladores de tensión de tres terminales a partir de los
+ 
+\begin_inset Formula $\pm15V$
+\end_inset
+
+ mencionados anteriormente.
+ Esto implica que el caso más limitante sea aquel para el cual la señal
+ de realimentación no pueda corregir la salida debido a la imposibilidad
+ de superar las grandes amplitudes de la señal de entrada.
+ Entonces, centrandonos en este análisis y dejando de lado, por ejemplo,
+ posibles atenuaciones de la señal de entrada mediante el filtro antialias,
+ se arriba a un valor de rango dinámico que se puede calcular mediante la
+ siguiente expresión:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Rd=20.log_{10}(\frac{V_{inMÁX}}{V_{inMIN}})=20.log_{10}(\frac{5V-\frac{(2).(40)}{1000}V}{\frac{40}{1000}V})\simeq41.8dB$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vale aclarar que para el cáculo se consideró 
+\begin_inset Formula $"V_{inMIN}"$
+\end_inset
+
+ como 
+\begin_inset Formula $40mV$
+\end_inset
+
+ que equivale al piso de ruido que suele manifestarse en un ambiente de
+ laboratorio universitario.
+ Entonces se consideró a la tensión máxima como la máxima tal que se pueda
+ diferenciar de la tensión 
+\begin_inset Formula $V_{REF}$
+\end_inset
+
+ pero siendo a la vez menor que esta última tensión de referencia.
+ Por esto es que la tensión máxima de entrada se considera como la tensión
+ de referencia (o de realimentación) 
+\begin_inset Formula $V_{REF}-80mV$
+\end_inset
+
+ (se sustrae el doble del piso de ruido).
 \end_layout
 
 \begin_layout Subsection
@@ -2962,16 +3387,19 @@ A continuación se pretende exponer la limitación de rango dinámico que puede
 \end_inset
 
  Gauss de 500Hz y 
-\begin_inset Formula $1.9V_{pp}$
+\begin_inset Formula $2V_{pp}$
 \end_inset
 
  con una frecuencia de sampleo de 
 \begin_inset Formula $900KHz$
 \end_inset
 
-, mientras que la tensión de realimentación se disminuyó a la mitad con
- respecto a las mediciones anteriores lo cual dió lugar a la saturación
- de la salida como se muestra a continuación:
+, mientras que la tensión de realimentación se impuso también de 
+\begin_inset Formula $2V_{pp}$
+\end_inset
+
+ (menor con respecto a las mediciones anteriores), lo cual dió lugar a la
+ saturación de la salida como se muestra a continuación:
 \end_layout
 
 \begin_layout Standard
@@ -3021,8 +3449,187 @@ Señal
 Análisis de Resultados
 \end_layout
 
+\begin_layout Standard
+En esta sección del artículo, acercandose a la parte final del mismo, se
+ pretenderá analizar los resultados obtenidos de las mediciones, comparanado
+ los mismos con los resultados que predicen los análisis teóricos y las
+ simulaciones idealizadas que se han realizado.
+ A partir de esto se pretende abordar una conclusión sobre el correcto funcionam
+iento del circuito que se ha diseñado, asi como también dar con otras nuevas.
+\end_layout
+
+\begin_layout Standard
+Las mediciones se presentaron según la señal de entrada utilizada, sin embargo
+ a continuación se analizarán las mismas según el tipo de medición realizado,
+ para las tres señales utilizadas.
+\end_layout
+
+\begin_layout Subsection
+Resultados de Mediciones de Salida Digital
+\end_layout
+
+\begin_layout Standard
+En todas las mediciones de la señal digital de salida que se han realizado
+ se obtuvo una señal cuadrada de mayor frecuencia que se corresponde con
+ los instantes en los cuales la señal de entrada variaba más rapidamente
+ (su derivada cercana o igual a la derivada máxima), mientras que la frecuencia
+ se vió disminuida para aquellos instantes en los cuales la variación de
+ la señal se realizaba de forma lenta.
+ Además, la señal digital demostró mantenerse mayor cantidad de tiempo en
+ 
+\begin_inset Quotes eld
+\end_inset
+
+alto
+\begin_inset Quotes erd
+\end_inset
+
+ según si el valor de la señal era mayor y positivo, o en 
+\begin_inset Quotes eld
+\end_inset
+
+bajo
+\begin_inset Quotes erd
+\end_inset
+
+ según si el valor de la señal era menor y negativo (esto solo ocurrió en
+ el caso del semiciclo negativo de la señal senoidal).
+ El hecho de observar esto es indicio del correcto funcionamiento del circuito
+ debido a que el resultado observado lo predice a su vez el análisis teórico.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, se puede notar un desfasaje de la señal digital con respecto
+ de la señal original, sabiendo las correspondencia que existe entre estas
+ dos (la cual se ha comentado en el párrafo anterior).
+ Esto se puede explicar debido a los retardos que existen en el lazo del
+ modulador/conversor, pero principalmente se atribuye al desfasaje que conlleva
+ consigo el integrador del lazo 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por último, con respecto a las amplitudes de las señales cuadradas obtenidas,
+ estas dependen del valor de la tensión 
+\begin_inset Formula $"V_{REF}"$
+\end_inset
+
+ que se ha utilizado para cada medición.
+\end_layout
+
+\begin_layout Subsection
+Resultados de las Mediciones de Recuperación
+\end_layout
+
+\begin_layout Standard
+Antes de analizar los resultados de las recuperaciones medidas, es importante
+ aclarar que dos de las señales utilizadas como entradas, las cuales son
+ la señal de 
+\begin_inset Formula $\frac{1}{2}Gauss$
+\end_inset
+
+ y la señal de Sinc, poseen armónicos más allá de los 
+\begin_inset Formula $15KHz$
+\end_inset
+
+ debido a sus cambios abruptos en el tiempo, principalmente para el caso
+ de la señal de media gaussiana.
+ Esto implica que la señal entra al lazo 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ con una forma distinta a la señal original y esto explica que la señal
+ recuperada no sea exactamente la señal de salida mientras que el funcionamiento
+ del circuito es correcto.
+ El hecho del cambio de forma de la señal debido al filtro antialias se
+ puede observar en la primer medición realizada en la sección de las mediciones
+ de la señal de media gaussiana.
+\end_layout
+
+\begin_layout Standard
+Dicho esto, las señales se lograron recuperar exitosamente, según lo muestran
+ las imagenes de las mediciones, con un filtro recuperador de segundo orden
+ y una frecuencia de clock de 
+\begin_inset Formula $900KHz.$
+\end_inset
+
+ Sin embarog, para las tres señales se puede observar que al disminuir la
+ frecuencia del clock se introduce alias a la señal recuperada, lo cual
+ es comprensible debido a que los espectros se acercan y comienzan a superponers
+e armónicos en las bandas de frecuencia correspondiente a la repeteción
+ de la banda base de la señal de entrada (o a la señal de salida del filtro
+ antialias).
+\end_layout
+
+\begin_layout Subsection
+Resultados de Mediciones de Integrador Diferencial
+\end_layout
+
+\begin_layout Standard
+Al medir las señales de salida del integrador diferencial, se puede notar
+ como la diferencia de la mismas es una señal que sigue la forma de la señal
+ original, sin embargo se observan formas de onda de mayor frecuencia que
+ se corresponden con la carga y descarga de capacitores a una frecuencia
+ mayor (oversampling) a la de la señal de entrada.
+ En fin, esto es lo que da lugar a la modulación y conversión.
+\end_layout
+
+\begin_layout Subsection
+Resultados de Mediciones en Modo Average
+\end_layout
+
+\begin_layout Standard
+Al activar el modo 
+\begin_inset Quotes eld
+\end_inset
+
+average
+\begin_inset Quotes erd
+\end_inset
+
+ del osciloscopio, el mismo promedia una determinada cantidad de muestras
+ (la cual puede ser configurada manualmente) para representar un punto en
+ la pantalla.
+ Al realizar esto e intentar medir la señal digital de salida del sistema
+ (la cual es una señal modulada), se obtiene una señal que tiende a ser
+ la señal original.
+ Esto es comprensible debido a que el hecho de promediar con el modo average
+ es similar al hecho de aplicar un pasabajos al decimar (digital) o al recuperar
+ (analógico).
+ En las mediciones se muestran las diferencias entre el modo average con
+ un número de promedios igual a 8 y otra medición con 4096 promedios.
+ A pesar de que con 4096 promedios se podría llegar a observar que la forma
+ de onda se aproxima mejor a la forma de onda de la señal original, también
+ se puede observar que las diferencias son mínimas y podría llegar a no
+ hacer falta aplicar un gran número de promedios para obtener el resultado
+ que se ha expuesto.
+\end_layout
+
 \begin_layout Section
 Conclusión
+\end_layout
+
+\begin_layout Standard
+A lo largo del artículo se han desarrollado análisis teóricos y simulaciones
+ idealizadas a partir de las cuales se diseñó e implementó un modulador/converso
+r 
+\begin_inset Quotes eld
+\end_inset
+
+Sigma Delta
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $(\sum\triangle)$
+\end_inset
+
+ de 1 bit, pudiendo obtener resultados que concuerdan con lo predicho por
+ los efectos de Noise Shaping y Oversampling aplicados en el sistema de
+ este conversor.
 \end_layout
 
 \end_body
