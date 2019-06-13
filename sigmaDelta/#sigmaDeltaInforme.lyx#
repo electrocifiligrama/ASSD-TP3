@@ -1390,11 +1390,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta en Frecuencia Decimador 1:4
+Respuesta en Frecuencia Decimador x 4
 \end_layout
 
 \end_inset
@@ -3630,6 +3634,22 @@ Sigma Delta
  de 1 bit, pudiendo obtener resultados que concuerdan con lo predicho por
  los efectos de Noise Shaping y Oversampling aplicados en el sistema de
  este conversor.
+ En estos dos últimos factores se basa la eficiencia y la ventaja de este
+ conversor con respecto a otros, y se puede afirmar que en este artículo
+ se han podido aplicar estos dos de manera satisfactoria.
+\end_layout
+
+\begin_layout Standard
+La realización del modulador/conversor 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+ presentó un desafío interesante ya que fue necesario un análisis riguroso
+ de señal en tiempo continuo para luego poder trasladarse al tiempo discreto
+ y finalmente poder dar con la señal digital de interés, pero además requirió
+ de especial atención y creatividad a la hora de implementar circuitalmente
+ los modelos matemáticos realizados para modelar la modulación y conversión
+ en cuestión.
 \end_layout
 
 \end_body

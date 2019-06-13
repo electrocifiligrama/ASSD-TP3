@@ -1348,7 +1348,43 @@ Incremento de la Cantidad de Bits
 \end_layout
 
 \begin_layout Standard
-QUE SUCEDE, COMO SE MODIFICA EL ESPECTRO DE RUIDO Y DE LA SEÑAL
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroSen1KHzSimulink.PNG
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación Espectro de Salida ante Entrada Senoidal - 
+\begin_inset Formula $f=1KHz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1387,14 +1423,25 @@ A continuación se presenta la respuesta en frecuencia que permite visualizar
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/decimadorFIR.PNG
+	scale 45
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Respuesta en Frecuencia Decimador 1:4
+Respuesta en Frecuencia Decimador x 4
 \end_layout
 
 \end_inset
@@ -3642,7 +3689,10 @@ La realización del modulador/conversor
 
  presentó un desafío interesante ya que fue necesario un análisis riguroso
  de señal en tiempo continuo para luego poder trasladarse al tiempo discreto
- y finalmente poder dar con la señal digital de interés, pero además 
+ y finalmente poder dar con la señal digital de interés, pero además requirió
+ de especial atención y creatividad a la hora de implementar circuitalmente
+ los modelos matemáticos realizados para modelar la modulación y conversión
+ en cuestión.
 \end_layout
 
 \end_body
