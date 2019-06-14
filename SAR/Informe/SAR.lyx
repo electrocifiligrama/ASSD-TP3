@@ -1266,7 +1266,31 @@ Errores de precisión
 Al haber tenido en cuenta los máximos tiempos de establecimiento y de acquisició
 n dictados por las datasheets de los componentes, los errores de cuantización
  del ADC estarán dados mayoritariamente por la operación comparadora.
- 
+\end_layout
+
+\begin_layout Standard
+Si el comparador no tuviese ventana de histéresis o la misma resulta muy
+ angosta, una oscilación de pequeña amplitud provocada por el establecimiento
+ gradual de la señal de hold o la presencia de ruido en la misma harán que
+ la comparación sea imprecisa, pudiéndose así tener un error por defecto
+ o exceso indistintamente a la hora de realizar la comparación.
+ Es por esto que la ventana de histéresis es necesaria para el correcto
+ funcionamiento del conversor.
+\end_layout
+
+\begin_layout Standard
+En cambio, si la ventana de histéresis resulta demasiado grande, podrá haber
+ un error de un bit (el menos significativo) ya que pequeñas diferencias
+ entre la señal de entrada y de comparación no serían tenidas en cuenta
+ por el comparador.
+\end_layout
+
+\begin_layout Standard
+Es por esto que debe fijarse el ancho de la ventana de manera tal que se
+ permita como máximo error en un bit significativo, que de por sí es permisible
+ por el hecho de que la igualdad entre el valor digital y el analógico no
+ está cubierta de por sí, por la característica binaria de la respuesta
+ del comparador.
 \end_layout
 
 \end_body
