@@ -77,11 +77,7 @@
 
 \begin_body
 
-<<<<<<< HEAD
 \begin_layout Section
-=======
-\begin_layout Part
->>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Conversor y Modulador Sigma Delta
 \end_layout
 
@@ -1273,9 +1269,10 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
-<<<<<<< HEAD
 \begin_layout Subsubsection
 =======
+\end_layout
+
 \begin_layout Standard
 En fin, claramente se puede visualizar el 
 \begin_inset Quotes eld
@@ -1290,12 +1287,18 @@ or, sin embargo el ruido de cuantización en este caso sería menor.
  Aún más, se podría llegar a un número de bits de cuantización tal que el
  error al cuantizar sea tan bajo que el ruido introducido sea comparable
  al ruido del ambiente de laboratorio y entonces no se logre identificar
- la forma de pasa altos característica que el sistema aplica al error de
- cuantización y da origen al Noise Shaping.
+ la forma de pasa altos característica del 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
->>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Simulación del Espectro de Salida con Entrada Senoidal
 \end_layout
 
@@ -1369,44 +1372,7 @@ En el espectro celeste se pueden notar los picos de mayor potencia en las
  esto con el análisis de Noise Shaping realizado hasta el momento.
 \end_layout
 
-<<<<<<< HEAD
-\begin_layout Subsubsection
-Incremento de la Cantidad de Bits
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación de Espectro de Ruido y de Salida ante Entrada Senoidal - 
-\begin_inset Formula $f=1KHz$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-=======
 \begin_layout Subsection
->>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Decimador
 \end_layout
 
@@ -3453,7 +3419,7 @@ Espectro de Señal Digital Modulada
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Sobre Tensión de Realimentación y Rango Dinámico
 \end_layout
 
@@ -3523,7 +3489,7 @@ Señal
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Análisis de Resultados
 \end_layout
 
@@ -3542,7 +3508,7 @@ Las mediciones se presentaron según la señal de entrada utilizada, sin embargo
  para las tres señales utilizadas.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados de Mediciones de Salida Digital
 \end_layout
 
@@ -3598,7 +3564,7 @@ Por último, con respecto a las amplitudes de las señales cuadradas obtenidas,
  que se ha utilizado para cada medición.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados de las Mediciones de Recuperación
 \end_layout
 
@@ -3642,7 +3608,7 @@ e armónicos en las bandas de frecuencia correspondiente a la repeteción
  antialias).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados de Mediciones de Integrador Diferencial
 \end_layout
 
@@ -3655,7 +3621,7 @@ Al medir las señales de salida del integrador diferencial, se puede notar
  En fin, esto es lo que da lugar a la modulación y conversión.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados de Mediciones en Modo Average
 \end_layout
 
@@ -3686,7 +3652,7 @@ average
  que se ha expuesto.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Resultados de Mediciones con Analizador de Espectro
 \end_layout
 
@@ -3744,7 +3710,7 @@ nte bajo comparado con el ruido que se introduciría mediante una conversión
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Conclusión
 \end_layout
 

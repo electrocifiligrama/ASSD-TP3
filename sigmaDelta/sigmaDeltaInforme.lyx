@@ -1269,9 +1269,6 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
-<<<<<<< HEAD
-\begin_layout Subsubsection
-=======
 \begin_layout Standard
 En fin, claramente se puede visualizar el 
 \begin_inset Quotes eld
@@ -1298,7 +1295,6 @@ Noise Shaping
 \end_layout
 
 \begin_layout Subsection
->>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Simulación del Espectro de Salida con Entrada Senoidal
 \end_layout
 
@@ -1372,44 +1368,7 @@ En el espectro celeste se pueden notar los picos de mayor potencia en las
  esto con el análisis de Noise Shaping realizado hasta el momento.
 \end_layout
 
-<<<<<<< HEAD
-\begin_layout Subsubsection
-Incremento de la Cantidad de Bits
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación de Espectro de Ruido y de Salida ante Entrada Senoidal - 
-\begin_inset Formula $f=1KHz$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-=======
 \begin_layout Subsection
->>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Decimador
 \end_layout
 
