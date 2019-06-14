@@ -1269,7 +1269,36 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
+<<<<<<< HEAD
 \begin_layout Subsubsection
+=======
+\begin_layout Standard
+En fin, claramente se puede visualizar el 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+ el cual también se podría notar si se aumenta la cantidad de bits del cuantizad
+or, sin embargo el ruido de cuantización en este caso sería menor.
+ Aún más, se podría llegar a un número de bits de cuantización tal que el
+ error al cuantizar sea tan bajo que el ruido introducido sea comparable
+ al ruido del ambiente de laboratorio y entonces no se logre identificar
+ la forma de pasa altos característica del 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+>>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Simulación del Espectro de Salida con Entrada Senoidal
 \end_layout
 
@@ -1343,6 +1372,7 @@ En el espectro celeste se pueden notar los picos de mayor potencia en las
  esto con el análisis de Noise Shaping realizado hasta el momento.
 \end_layout
 
+<<<<<<< HEAD
 \begin_layout Subsubsection
 Incremento de la Cantidad de Bits
 \end_layout
@@ -1377,6 +1407,9 @@ Simulación de Espectro de Ruido y de Salida ante Entrada Senoidal -
 \end_layout
 
 \begin_layout Subsubsection
+=======
+\begin_layout Subsection
+>>>>>>> 6299ca54d7c3fa49fa44bba571f4fef69d5dfad0
 Decimador
 \end_layout
 
