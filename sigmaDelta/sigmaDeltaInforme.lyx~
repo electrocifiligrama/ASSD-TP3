@@ -78,7 +78,7 @@
 \begin_body
 
 \begin_layout Part
-TP 3 ASSD - Conversor y Modulador Sigma Delta
+Conversor y Modulador Sigma Delta
 \end_layout
 
 \begin_layout Section
@@ -1269,6 +1269,24 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
+\begin_layout Standard
+En fin, claramente se puede visualizar el 
+\begin_inset Quotes eld
+\end_inset
+
+Noise Shaping
+\begin_inset Quotes erd
+\end_inset
+
+ el cual también se podría notar si se aumenta la cantidad de bits del cuantizad
+or, sin embargo el ruido de cuantización en este caso sería menor.
+ Aún más, se podría llegar a un número de bits de cuantización tal que el
+ error al cuantizar sea tan bajo que el ruido introducido sea comparable
+ al ruido del ambiente de laboratorio y entonces no se logre identificar
+ la forma de pasa altos característica que el sistema aplica al error de
+ cuantización y da origen al Noise Shaping.
+\end_layout
+
 \begin_layout Subsection
 Simulación del Espectro de Salida con Entrada Senoidal
 \end_layout
@@ -1341,39 +1359,6 @@ En el espectro celeste se pueden notar los picos de mayor potencia en las
  que la potencia del ruido de cuantización en un rango cercano a dichas
  frecuencias se observan relativamente altamente atenuados, coincidiendo
  esto con el análisis de Noise Shaping realizado hasta el momento.
-\end_layout
-
-\begin_layout Subsection
-Incremento de la Cantidad de Bits
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Simulación de Espectro de Ruido y de Salida ante Entrada Senoidal - 
-\begin_inset Formula $f=1KHz$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
