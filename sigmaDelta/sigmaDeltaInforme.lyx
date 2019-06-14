@@ -1355,10 +1355,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Caption Standard
 
@@ -2566,118 +2562,6 @@ Gauss y Sinc.
 \end_layout
 
 \begin_layout Subsection
-Mediciones de Señal de Control - Clock
-\end_layout
-
-\begin_layout Standard
-Ante todo, se procede a exponer las mediciones realizadas para el oscilador
- utilizado como señal de control, ya que su correcto funcionamiento es crucial
- para obtener resultados satisfactorios.
- A continuación se pone en evidencia su funcionamiento para distintas frecuencia
-s:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Medición de Clock - 
-\begin_inset Formula $f=60KHz$
-\end_inset
-
- - 
-\begin_inset Formula $DC=50\%$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Medición de Clock - 
-\begin_inset Formula $f=500KHz$
-\end_inset
-
- - 
-\begin_inset Formula $DC=50\%$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Medición de Clock - 
-\begin_inset Formula $f=1MHz$
-\end_inset
-
- - 
-\begin_inset Formula $DC=50\%$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Mediciones de Señal Senoidal
 \end_layout
 
@@ -2910,6 +2794,48 @@ Average
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por útlimo, se midió en el analizador de espectro, el espectro en frecuencia
+ de la señal de salida digital, con las mismas condiciones en las que se
+ ha medido la misma anteriormente con osciloscopio.
+ A continuación se expone el resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroSeno.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de Señal Digital Modulada
 \end_layout
 
 \end_inset
@@ -3192,6 +3118,47 @@ Average
 
 \end_layout
 
+\begin_layout Standard
+Por útlimo, a continuación se expone la medición del espectro de la señal
+ digitalizada de salida, cuya medición con osciloscopio se ha expuesto anteriorm
+ente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroMedioGauss.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de Señal Digital Modulada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Mediciones de Señal Sinc
 \end_layout
@@ -3403,6 +3370,47 @@ Average
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, se presenta el resultado de la medición con el analizador de
+ espectro del espectro en frecuencia de la señal digitalizada, cuya respuesta
+ en tiempo se ha medido anteriormente con osciloscopio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenesSIGMADELTA/espectroSinc.PNG
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Espectro de Señal Digital Modulada
 \end_layout
 
 \end_inset
@@ -3646,6 +3654,64 @@ average
  se puede observar que las diferencias son mínimas y podría llegar a no
  hacer falta aplicar un gran número de promedios para obtener el resultado
  que se ha expuesto.
+\end_layout
+
+\begin_layout Subsection
+Resultados de Mediciones con Analizador de Espectro
+\end_layout
+
+\begin_layout Standard
+Tal como era de esperar según lo predicho por las simulaciones y el análisis
+ teórico, las mediciones con analizador de espectro revelan una baja potencia
+ de ruido para las frecuencias bajas, mientras que se puede observar el
+ aumento de este ruido para frecuencias altas.
+ El analizador utilizado para las mediciones permitió medir hasta los 
+\begin_inset Formula $100KHz$
+\end_inset
+
+ de frecuencia, sin embargo se puede ver en los gráficos de mediciones presentad
+os que para esta frecuencia la potencia del ruido blanco (cuya forma de
+ espectro característico se logra visualizar en la medición) es comparable
+ con la potencia de los armónicos alejados de los principales de las señales
+ medidas (para los tres casos).
+ Además, se lográ identificar la forma de pasa altos aplicada sobre este
+ ruido blanco, cuya potencia máxima se debería visualizar a 
+\begin_inset Formula $450KHz$
+\end_inset
+
+ (
+\begin_inset Formula $\frac{fs}{2}=\frac{900}{2}KHz$
+\end_inset
+
+) si el instrumento de medición utilizado lo permitiera, mientras que la
+ potencia de los armónicos principales de la señal se destacan para frecuencias
+ menores a 
+\begin_inset Formula $15KHz$
+\end_inset
+
+, que corresponde al ancho de banda de la señal según el filtro antialias.
+ 
+\end_layout
+
+\begin_layout Standard
+Enfocandose en una de las tres señales medidas, por ejemplo en la señal
+ senoidal, se puede observar que si se aplicará la decimación por la cual
+ se redujera la frecuencia de sampleo en un factor de 16 (
+\begin_inset Formula $fs=\frac{900}{20}KHz=45KHz$
+\end_inset
+
+, aplicandose el pasabajos digital a 
+\begin_inset Formula $\frac{fs}{2}=22.5KHz$
+\end_inset
+
+ se tendría una señal senoidal digital para la cual, según se puede ver
+ con el analizador de espectro, el efecto de ruido de cuantización es relativame
+nte bajo comparado con el ruido que se introduciría mediante una conversión
+ directa, sin modulación 
+\begin_inset Formula $\sum\triangle$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
