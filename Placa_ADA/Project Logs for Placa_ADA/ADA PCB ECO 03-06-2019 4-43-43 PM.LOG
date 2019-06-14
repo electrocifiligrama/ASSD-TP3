@@ -1,0 +1,6 @@
+Added Component: Designator=PresetVrefDAC_ADC(PRESET V)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND_ADC_net Pin=PresetVrefDAC_ADC-1
+Added Pin To Net: NetName=NetDAC_fpga_15 Pin=PresetVrefDAC_ADC-2
+Added Pin To Net: NetName=10V_ADC Pin=PresetVrefDAC_ADC-3
+Added Member To Class: ClassName=ADC_FPGA Member=Component PresetVrefDAC_ADC 50K

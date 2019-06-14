@@ -1,0 +1,23 @@
+Added Component: Designator=BUFFER_ADC2(JG008)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www-s.ti.com/sc/ds/tl082.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Feb-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "04-Mar-2005"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Stylized 3D Model Added."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "DIP; 8 Leads; Row Spacing 7.62 mm; Pitch 2.54 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "JG008"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "Jan-1995"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "16-Jan-2001"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=10V_ADC Pin=BUFFER_ADC2-1
+Added Pin To Net: NetName=10V_ADC Pin=BUFFER_ADC2-2
+Added Pin To Net: NetName=NetBUFFER_ADC_3 Pin=BUFFER_ADC2-3
+Added Pin To Net: NetName=NetBUFFER_ADC_6 Pin=BUFFER_ADC2-6
+Added Pin To Net: NetName=NetBUFFER_ADC_6 Pin=BUFFER_ADC2-7
+Added Pin To Net: NetName=+15V Pin=BUFFER_ADC2-8
+Change Net Name : Old Net Name=NetBUFFER_ADC_3 New Net Name=NetBUFFER_ADC2_3
+Change Net Name : Old Net Name=NetBUFFER_ADC_6 New Net Name=NetBUFFER_ADC2_6
+Added Member To Class: ClassName=ADC_FPGA Member=Component BUFFER_ADC2 TL082JG

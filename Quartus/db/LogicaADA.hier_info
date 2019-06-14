@@ -1,0 +1,245 @@
+|main
+LE <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+EOC_integrado => mux2:inst8.first_bus
+Start => SAR:inst5.start
+Clk_50MHz => PseudoPll:inst1.clk_in
+clk_switches[0] => PseudoPll:inst1.freq_param[0]
+clk_switches[1] => PseudoPll:inst1.freq_param[1]
+clk_switches[2] => PseudoPll:inst1.freq_param[2]
+clk_switches[3] => PseudoPll:inst1.freq_param[3]
+clk_switches[4] => PseudoPll:inst1.freq_param[4]
+clk_switches[5] => PseudoPll:inst1.freq_param[5]
+clk_switches[6] => PseudoPll:inst1.freq_param[6]
+clk_switches[7] => PseudoPll:inst1.freq_param[7]
+Comparador => SAR:inst5.cmp_in
+Comparador => DeltaMod:inst.comp_res
+Output_Enable => mux2:inst8.sel_line
+Output_Enable => OutputEnabler:inst4.Out_enable
+New_start <= NewStart:inst3.new_start
+Clock_output <= PseudoPll:inst1.clk_out
+SH <= SAR:inst5.sh
+Result[0] <= OutputEnabler:inst4.output_bus[0]
+Result[1] <= OutputEnabler:inst4.output_bus[1]
+Result[2] <= OutputEnabler:inst4.output_bus[2]
+Result[3] <= OutputEnabler:inst4.output_bus[3]
+Result[4] <= OutputEnabler:inst4.output_bus[4]
+Result[5] <= OutputEnabler:inst4.output_bus[5]
+Result[6] <= OutputEnabler:inst4.output_bus[6]
+Result[7] <= OutputEnabler:inst4.output_bus[7]
+Sel_Conversor => MuxSalida:inst2.sel_line
+
+
+|main|NewStart:inst3
+EOC => in_signal.CLK
+clk => clk.IN1
+new_start <= Sustain:inst.port2
+
+
+|main|NewStart:inst3|Sustain:inst
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => new_start~reg0.CLK
+in_signal => new_start.OUTPUTSELECT
+in_signal => counter.OUTPUTSELECT
+in_signal => counter.OUTPUTSELECT
+new_start <= new_start~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|mux2:inst8
+first_bus => output_bus.DATAB
+second_bus => output_bus.DATAA
+sel_line => output_bus.OUTPUTSELECT
+output_bus <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|SAR:inst5
+start => always0.IN1
+clk => clk.IN1
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+cmp_in => data.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sh <= sh~reg0.DB_MAX_OUTPUT_PORT_TYPE
+eoc <= eoc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|SAR:inst5|up_counter_mod34:up_counter_33
+clk => counter_up[0]~reg0.CLK
+clk => counter_up[1]~reg0.CLK
+clk => counter_up[2]~reg0.CLK
+clk => counter_up[3]~reg0.CLK
+clk => counter_up[4]~reg0.CLK
+reset => counter_up[0]~reg0.ACLR
+reset => counter_up[1]~reg0.ACLR
+reset => counter_up[2]~reg0.ACLR
+reset => counter_up[3]~reg0.ACLR
+reset => counter_up[4]~reg0.ACLR
+counter_up[0] <= counter_up[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_up[1] <= counter_up[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_up[2] <= counter_up[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_up[3] <= counter_up[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_up[4] <= counter_up[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|PseudoPll:inst1
+clk_in => clk_out~reg0.CLK
+clk_in => counter[0].CLK
+clk_in => counter[1].CLK
+clk_in => counter[2].CLK
+clk_in => counter[3].CLK
+clk_in => counter[4].CLK
+clk_in => counter[5].CLK
+clk_in => counter[6].CLK
+clk_in => counter[7].CLK
+clk_in => counter[8].CLK
+clk_in => counter[9].CLK
+clk_in => counter[10].CLK
+clk_in => counter[11].CLK
+clk_in => counter[12].CLK
+clk_in => counter[13].CLK
+clk_in => counter[14].CLK
+clk_in => counter[15].CLK
+clk_in => edges_per_on_cycle[0].CLK
+clk_in => edges_per_on_cycle[1].CLK
+clk_in => edges_per_on_cycle[2].CLK
+clk_in => edges_per_on_cycle[3].CLK
+clk_in => edges_per_on_cycle[4].CLK
+clk_in => edges_per_on_cycle[5].CLK
+clk_in => edges_per_on_cycle[6].CLK
+clk_in => edges_per_on_cycle[7].CLK
+clk_in => edges_per_on_cycle[8].CLK
+clk_in => edges_per_on_cycle[9].CLK
+clk_in => edges_per_on_cycle[10].CLK
+clk_in => edges_per_on_cycle[11].CLK
+clk_in => edges_per_on_cycle[12].CLK
+clk_in => edges_per_on_cycle[13].CLK
+clk_in => edges_per_on_cycle[14].CLK
+clk_in => edges_per_on_cycle[15].CLK
+clk_in => edges_per_on_cycle[16].CLK
+clk_in => edges_per_on_cycle[17].CLK
+clk_in => edges_per_on_cycle[18].CLK
+clk_in => edges_per_on_cycle[19].CLK
+clk_in => edges_per_on_cycle[20].CLK
+clk_in => edges_per_on_cycle[21].CLK
+clk_in => edges_per_on_cycle[22].CLK
+clk_in => edges_per_on_cycle[23].CLK
+clk_in => edges_per_on_cycle[24].CLK
+clk_in => edges_per_on_cycle[25].CLK
+clk_in => edges_per_on_cycle[26].CLK
+clk_in => edges_per_on_cycle[27].CLK
+clk_in => edges_per_on_cycle[28].CLK
+clk_in => edges_per_on_cycle[29].CLK
+clk_in => edges_per_on_cycle[30].CLK
+clk_in => edges_per_on_cycle[31].CLK
+freq_param[0] => ~NO_FANOUT~
+freq_param[1] => ~NO_FANOUT~
+freq_param[2] => ~NO_FANOUT~
+freq_param[3] => ~NO_FANOUT~
+freq_param[4] => ~NO_FANOUT~
+freq_param[5] => ~NO_FANOUT~
+freq_param[6] => ~NO_FANOUT~
+freq_param[7] => ~NO_FANOUT~
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|OutputEnabler:inst4
+input_bus[0] => output_bus[0].DATAIN
+input_bus[1] => output_bus[1].DATAIN
+input_bus[2] => output_bus[2].DATAIN
+input_bus[3] => output_bus[3].DATAIN
+input_bus[4] => output_bus[4].DATAIN
+input_bus[5] => output_bus[5].DATAIN
+input_bus[6] => output_bus[6].DATAIN
+input_bus[7] => output_bus[7].DATAIN
+output_bus[0] <= output_bus[0].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[1] <= output_bus[1].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[2] <= output_bus[2].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[3] <= output_bus[3].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[4] <= output_bus[4].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[5] <= output_bus[5].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[6] <= output_bus[6].DB_MAX_OUTPUT_PORT_TYPE
+output_bus[7] <= output_bus[7].DB_MAX_OUTPUT_PORT_TYPE
+Out_enable => output_bus[0].OE
+Out_enable => output_bus[1].OE
+Out_enable => output_bus[2].OE
+Out_enable => output_bus[3].OE
+Out_enable => output_bus[4].OE
+Out_enable => output_bus[5].OE
+Out_enable => output_bus[6].OE
+Out_enable => output_bus[7].OE
+
+
+|main|MuxSalida:inst2
+first_bus[0] => output_bus.DATAB
+first_bus[1] => output_bus.DATAB
+first_bus[2] => output_bus.DATAB
+first_bus[3] => output_bus.DATAB
+first_bus[4] => output_bus.DATAB
+first_bus[5] => output_bus.DATAB
+first_bus[6] => output_bus.DATAB
+first_bus[7] => output_bus.DATAB
+second_bus[0] => output_bus.DATAA
+second_bus[1] => output_bus.DATAA
+second_bus[2] => output_bus.DATAA
+second_bus[3] => output_bus.DATAA
+second_bus[4] => output_bus.DATAA
+second_bus[5] => output_bus.DATAA
+second_bus[6] => output_bus.DATAA
+second_bus[7] => output_bus.DATAA
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+sel_line => output_bus.OUTPUTSELECT
+output_bus[0] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[1] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[2] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[3] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[4] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[5] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[6] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+output_bus[7] <= output_bus.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|DeltaMod:inst
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+comp_res => counter.OUTPUTSELECT
+clk => counter[0]~reg0.CLK
+clk => counter[1]~reg0.CLK
+clk => counter[2]~reg0.CLK
+clk => counter[3]~reg0.CLK
+clk => counter[4]~reg0.CLK
+clk => counter[5]~reg0.CLK
+clk => counter[6]~reg0.CLK
+clk => counter[7]~reg0.CLK
+counter[0] <= counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[4] <= counter[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[5] <= counter[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[6] <= counter[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter[7] <= counter[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

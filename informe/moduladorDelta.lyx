@@ -1,0 +1,375 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Modulador Delta
+\end_layout
+
+\begin_layout Subsection
+Introduccion
+\end_layout
+
+\begin_layout Standard
+La modulacion delta es una implementacion mas simple de modulación por codificac
+ión de impulsos diferenciales (DPCM).
+ Esta se basa en la conversion de una señal analogica a digital con una
+ resolucion de 1 bit.
+ Ya que a la salida se obtiene la diferencia entre el valor anterior y el
+ actual, y no la señal cuantizada.
+ Midiendo esta diferencia, se puede usar un contador para obtener la señal
+ cuantizada.
+ A continuacion s presenta un simple diagrama en bloques de el modulador
+ delta como un sistema lineal realimentado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Screenshot 2019-06-12 13.05.55.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama modulador delta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para la implementacion fisica del sistema, se usa un comparador logico para
+ el cuantizador y un contador con un DAC para el integrador.
+ El diagrama resultante es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Screenshot 2019-06-12 13.13.50.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema de implementación en placa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este esquema, el comparador comparal la señal analogica de entrada con
+ una señal secundaria.
+ Esta señal secundaria reulta en la señal de entrada, un tick de clock antes,
+ por lo que el comparador devuelve si la señal presente aumento o disminuyo
+ en comparacion a la pasada.
+ Este bit de difrenciacion entra en un contador up/down, donde este se increment
+a si el comparador dio un uno logico y se decrementa si dio un cero logico.
+ Por lo que a la salida de el contador, tengo la señal cuantizada.
+ Cuanto mas bits tenga el contador, mejor sera la resolucion.
+ Si la señal cuantizada se introduce en un DAC, a la salida se obtiene nuevament
+e la señal analogica, un tiempo anterior a la entrada.
+\end_layout
+
+\begin_layout Subsection
+Recuperacion de la señal
+\end_layout
+
+\begin_layout Standard
+Para recuperar la señal se necesita el siguiente circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/Screenshot 2019-06-12 13.37.12.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema del demodulador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde el integrador vuelve a ser un contador up/down.
+ De manera que al pasar por el low pass, se eliminan las altas frecuencias
+ y se logra obtener la señal recuperada.
+\end_layout
+
+\begin_layout Subsection
+Sample and Hold
+\end_layout
+
+\begin_layout Standard
+TERMINAR
+\end_layout
+
+\begin_layout Subsection
+Conversion
+\end_layout
+
+\begin_layout Standard
+TERMINAR
+\end_layout
+
+\begin_layout Subsection
+Parametros Limitantes
+\end_layout
+
+\begin_layout Standard
+Los dos factores limitantes a la hora de implementar el moduldador delta
+ son: La resolucion de la señal, la SNR (signal to noise ratio) y el OSP
+ (output signal power).
+\end_layout
+
+\begin_layout Subsubsection
+OSP
+\end_layout
+
+\begin_layout Standard
+Este factor introduce una restriccion en la amplitud de la señal de la entrada.
+ Si tiene una derivada muy grande la señal de entrada, entonces la señal
+ modulada no puede seguir a la señal de entrada y ocurre 'slope overload'.
+\end_layout
+
+\begin_layout Standard
+Teniendo la entrada:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $X_{i}(t)=A\cdotp cos(\omega\cdotp t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Derivando se obtiene:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $X_{i}^{'}(t)=-A\cdotp\omega\cdotp sin(\omega\cdotp t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El maximo se encuentra en:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $|X_{i}^{'}(t)|_{MAX}=A\cdotp\omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y para evitar 'slope overload', se necesita que se cumpla el siguiente criterio:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $|X_{i}^{'}(t)|_{MAX}<f_{s}\cdotp\sigma$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es el step size de la cuanticacion.
+\end_layout
+
+\begin_layout Standard
+Despejando se obtiene que la amplitude de entrada maxima es:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $A_{MAX}=\frac{\sigma\cdotp f_{s}}{\omega}=\frac{\sigma\cdotp f_{s}}{2\pi f}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+SNR
+\end_layout
+
+\begin_layout Standard
+Para tener high signal to noise ratio, se necesita hacer oversampling.
+ Por lo que hay uns restriccion en cuanto a la 
+\begin_inset Formula $f_{s}$
+\end_inset
+
+.
+ Esta restriccion se genera cuando en un periodo de smapleo, la senal cambia
+ del maximo valor al minimo valor, por lo que para que el modulador pueda
+ hacer ese cambio a tiempo, el clock debe ser el numero de niveles mas grande
+ que la frecuencia de sampleo a la entrada.
+ Por lo que en el peor caso:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $Clk=f_{s}\cdotp L=fs\cdotp2^{8}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,28 @@
+PCAD Importer Log
+Project : ADC0809CCN.LibPkg
+
+Section : C:\Users\Manuel Mollon\Dropbox\ASSD\TP3\ASSD-TP3\librerias altium\ADC0809CCN.lia
+    Section : PCB Library - ADC0809CCN.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token ADC0809CCN On Line 385
+            Warning - 1 : Skipping Token attachedSymbol On Line 692
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - ADC0809CCN.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token multiLayer On Line 96
+            Warning - 1 : Skipping Token layerContents On Line 126
+            Warning - 1 : Skipping Token layerContents On Line 249
+            Warning - 1 : Skipping Token layerContents On Line 372
+        EndSection
+
+        Section : Generating SCH Library - ADC0809CCN.SchLib
+        EndSection
+    EndSection
+EndSection

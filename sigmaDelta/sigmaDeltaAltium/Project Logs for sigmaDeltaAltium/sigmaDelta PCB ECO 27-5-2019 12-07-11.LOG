@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=+Valim Pin=Ccoup_dif1-1
+Added Pin To Net: NetName=-Valim Pin=Ccoup_dif2-1
+Added Room: Name=clock
+Added Room: Name=diferencial
+Added Room: Name=filtros
+Added Room: Name=integrator
+Added Room: Name=regulador
+Added Room: Name=sigmaDeltaComplete

@@ -1,0 +1,17 @@
+Board Information Report
+Filename     : C:\Users\malen\Desktop\ASSD\TP3aux\sigmaDeltaAltium\sigmaDeltaAUX.PcbDoc
+Date         : 27/5/2019
+Time         : 16:28:24
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 152.4mmx101.6mm
+    Components on board, 68
+count : 2
+
+Routing Information
+    Routing completion, 100,00%
+    Connections, 173
+    Connections routed, 173
+    Connections remaining, 0
+count : 4

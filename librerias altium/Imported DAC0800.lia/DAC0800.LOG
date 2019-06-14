@@ -1,0 +1,32 @@
+PCAD Importer Log
+Project : DAC0800.LibPkg
+
+Section : C:\Users\Manuel Mollon\Dropbox\ASSD\TP3\ASSD-TP3\librerias altium\DAC0800.lia
+    Section : PCB Library - DAC0800.PcbLib
+        Section : Load Messages
+            Warning - 1 : Skipping Token DAC0800 On Line 370
+            Warning - 1 : Skipping Token attachedSymbol On Line 558
+        EndSection
+
+        Section : Import Messages
+        EndSection
+    EndSection
+
+    Section : SCH Library - DAC0800.SchLib
+        Section : Parsing Messages
+            Warning - 1 : Skipping Token padStyleDef On Line 9
+            Warning - 1 : Skipping Token padStyleDef On Line 21
+            Warning - 1 : Skipping Token multiLayer On Line 96
+            Warning - 1 : Skipping Token layerContents On Line 114
+            Warning - 1 : Skipping Token layerContents On Line 122
+            Warning - 1 : Skipping Token layerContents On Line 126
+            Warning - 1 : Skipping Token multiLayer On Line 137
+            Warning - 1 : Skipping Token layerContents On Line 155
+            Warning - 1 : Skipping Token layerContents On Line 168
+            Warning - 1 : Skipping Token layerContents On Line 268
+        EndSection
+
+        Section : Generating SCH Library - DAC0800.SchLib
+        EndSection
+    EndSection
+EndSection

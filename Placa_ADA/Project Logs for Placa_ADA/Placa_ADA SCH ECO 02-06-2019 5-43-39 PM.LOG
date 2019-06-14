@@ -1,0 +1,10 @@
+Remove Pin=D1OFF-2 From Net=+DiodoOffset
+Remove Pin=D2OFF-1 From Net=gnd_del_offset
+Remove Pin=U5V-1 From Net=+15V
+Remove Pin=U-5V-1 From Net=-15V
+Change Component Footprint: Designator=BUFFER_ADC Old Footprint=JG008 New Footprint=TI-D8_N
+Change Component Footprint: Designator=BUFFER_ADC Old Footprint=JG008 New Footprint=TI-D8_N
+Change Component Footprint: Designator=U2 Old Footprint=TI-D8_M New Footprint=TI-D8_N
+Change Component Footprint: Designator=U2 Old Footprint=TI-D8_M New Footprint=TI-D8_N
+Change Component Comment: Designator=BUFFER_ADC Old Comment=TL082JG New Comment=TL082ACD
+Change Component Comment: Designator=BUFFER_ADC Old Comment=TL082JG New Comment=TL082ACD

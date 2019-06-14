@@ -1,0 +1,139 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+
+// 
+// Device: Altera EP4CE22F17C6 Package FBGA256
+// 
+
+//
+// This file contains Slow Corner delays for the design using part EP4CE22F17C6,
+// with speed grade 6, core voltage 1.2VmV, and temperature 0 Celsius
+//
+
+// 
+// This SDF file should be used for ModelSim-Altera (Verilog) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "main")
+  (DATE "06/11/2019 11:39:52")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus Prime")
+  (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[7\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (3879:3879:3879) (3580:3580:3580))
+        (PORT oe (3618:3618:3618) (3933:3933:3933))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+        (IOPATH oe o (2275:2275:2275) (2224:2224:2224))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[6\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4443:4443:4443) (4112:4112:4112))
+        (IOPATH i o (3430:3430:3430) (3420:3420:3420))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[5\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4469:4469:4469) (4130:4130:4130))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[4\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4463:4463:4463) (4126:4126:4126))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[3\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4446:4446:4446) (4108:4108:4108))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[2\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4241:4241:4241) (3969:3969:3969))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[1\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4241:4241:4241) (3969:3969:3969))
+        (IOPATH i o (2263:2263:2263) (2276:2276:2276))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_obuf")
+    (INSTANCE Result\[0\]\~output)
+    (DELAY
+      (ABSOLUTE
+        (PORT i (4414:4414:4414) (4118:4118:4118))
+        (IOPATH i o (2201:2201:2201) (2206:2206:2206))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_ibuf")
+    (INSTANCE Sel_Conversor\~input)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (499:499:499) (643:643:643))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_io_ibuf")
+    (INSTANCE Output_Enable\~input)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i o (499:499:499) (643:643:643))
+      )
+    )
+  )
+)

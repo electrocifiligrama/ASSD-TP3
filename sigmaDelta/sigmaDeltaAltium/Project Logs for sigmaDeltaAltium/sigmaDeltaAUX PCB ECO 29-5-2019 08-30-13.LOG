@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=+Valim Pin=C1_int8-1
+Removed Pin From Net: NetName=+Valim Pin=C1_int9-1
+Removed Pin From Net: NetName=+Valim Pin=C1_int11-1
+Removed Pin From Net: NetName=+Valim Pin=Ccoup2_clock-1
+Removed Pin From Net: NetName=+Valim Pin=U2_clock-4
+Removed Pin From Net: NetName=+Valim Pin=U_int1-4
+Removed Pin From Net: NetName=+Valim Pin=U_int2-4
+Added Pin To Net: NetName=-Valim Pin=C1_int8-1
+Added Pin To Net: NetName=-Valim Pin=C1_int9-1
+Added Pin To Net: NetName=-Valim Pin=C1_int11-1
+Added Pin To Net: NetName=-Valim Pin=Ccoup2_clock-1
+Added Pin To Net: NetName=-Valim Pin=U2_clock-4
+Added Pin To Net: NetName=-Valim Pin=U_int1-4
+Added Pin To Net: NetName=-Valim Pin=U_int2-4
+Added Member To Class: ClassName=integrator Member=Component U_int1 LM833
+Added Room: Name=clock
+Added Room: Name=diferencial
+Added Room: Name=filtros
+Added Room: Name=integrator
+Added Room: Name=regulador
+Added Room: Name=sigmaDeltaComplete

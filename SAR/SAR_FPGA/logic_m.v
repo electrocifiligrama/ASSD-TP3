@@ -6,8 +6,8 @@ input start, clk, cmp_in;
 integer curr_bit;
 
 reg reset;
-reg [4:0] tick_count;
-up_counter_33(clk, reset, tick_count);
+wire [4:0] tick_count;
+up_counter_mod34 up_counter_33(clk, reset, tick_count);
 
 initial begin
 	reset <= 0;
@@ -19,7 +19,7 @@ end
 
 always @ (posedge clk)begin
 	
-	if ((start == 1) or (eoc == 1)) begin
+	if ((start == 1) || (eoc == 1)) begin
 		eoc <= 0;
 		data <= 8'b10000000;
 		sh <= 1;			//empiezo a samplear
