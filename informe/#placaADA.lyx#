@@ -185,14 +185,6 @@ La idea del anterior circuito es que la entrada esté limitada al rango
 
 , ya que es la limitación que tienen las etapas subsiguientes.
  La función de los diodos es evitar que la señal supere el rango permitido.
- Seguido de eso, la señal ingresa a un Sample & Hold, para que se mantenga
- el valor el tiempo de conversión necesario tal que se puedan realizar las
- conversiones.
- Los conversores son entonces, un ADC0809, un SAR y un modulador Delta,
- estos últimos implementados en una FPGA; y un Sigma Delta implementado
- en un placa separada.
- El conversor a utilizar se elige mediante jumpers, que colocan al conversor
- no elegido en un estado de alta impedancia.
 \end_layout
 
 \end_body

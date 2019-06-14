@@ -57,8 +57,8 @@
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 4
+\tocdepth 4
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -77,11 +77,11 @@
 
 \begin_body
 
-\begin_layout Part
-TP 3 ASSD - Conversor y Modulador Sigma Delta
+\begin_layout Section
+Conversor y Modulador Sigma Delta
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Introducción 
 \end_layout
 
@@ -160,7 +160,7 @@ Simulink
  cuyo diseño se arriba en este trabajo.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Marco Teórico
 \end_layout
 
@@ -333,7 +333,7 @@ decimación
  poner aún más en evidencia sus características.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Transferencia y Noise Shaping
 \end_layout
 
@@ -567,7 +567,7 @@ oversampling
  Esto último se explicará a continuación.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Oversampling
 \end_layout
 
@@ -603,7 +603,7 @@ oversampling
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Ventajas en el Filtrado
 \end_layout
 
@@ -663,7 +663,7 @@ Oversampling - Separación de Espectros de Banda Base
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Relación con Noise Shaping
 \end_layout
 
@@ -785,7 +785,7 @@ En consecuencia de lo explicado hasta aquí, con el sistema de
  A continuación se analizará aún más este último hecho.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Reducción de Bits
 \end_layout
 
@@ -905,7 +905,7 @@ Con estas expresiones, se puede concluir que para un sistema con frecuencia
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Decimación
 \end_layout
 
@@ -1031,7 +1031,7 @@ Noise Shaping
  digital para lo cual se aplica el pasabajos al decimar.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Simulaciones de Simulink - Matlab
 \end_layout
 
@@ -1104,7 +1104,7 @@ Todas las simulaciones se realizaron con una frecuencia de muestreo de
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Simulación de Respuesta al Impulso
 \end_layout
 
@@ -1188,7 +1188,7 @@ Sigma Delta
  sea igual al valor cero.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Simulación de Espectro de Ruido
 \end_layout
 
@@ -1269,7 +1269,7 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Simulación del Espectro de Salida con Entrada Senoidal
 \end_layout
 
@@ -1343,7 +1343,7 @@ En el espectro celeste se pueden notar los picos de mayor potencia en las
  esto con el análisis de Noise Shaping realizado hasta el momento.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Incremento de la Cantidad de Bits
 \end_layout
 
@@ -1376,7 +1376,7 @@ Simulación de Espectro de Ruido y de Salida ante Entrada Senoidal -
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Decimador
 \end_layout
 
@@ -1449,7 +1449,7 @@ Se puede notar del gráfico que su forma coincide con la de un pasabajos
  en el análisis del marco teórico.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Diseño e Implementación
 \end_layout
 
@@ -1578,7 +1578,7 @@ switches
  detalle.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Filtros Antialias y Recuperador
 \end_layout
 
@@ -1615,7 +1615,7 @@ En cuanto al orden de los filtros, para el recuperador no es necesario un
  ruido.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Diferenciador
 \end_layout
 
@@ -1637,7 +1637,7 @@ Luego de ingresar la señal por el filtro antialias, para generar un sistema
 y así poder plantear el circuito de manera diferencial.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Integrador 
 \begin_inset Formula $\sum\triangle$
 \end_inset
@@ -1786,7 +1786,7 @@ Por otro lado, si se intercambiaran las resistencias por su equivalente
  switcheados y mediante un nuevo análisis.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Capacitores Switcheados
 \end_layout
 
@@ -2107,7 +2107,7 @@ CD4053
  digital analógico (DAC) de la realimentación.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Generación de 
 \begin_inset Formula $V_{REF}$
 \end_inset
@@ -2126,7 +2126,7 @@ s para poder variar el valor absoluto de la tensión de referencia y así
  poder realizar mediciones con distintas tensiones de realimentación.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Cuantizador
 \end_layout
 
@@ -2199,7 +2199,7 @@ D
  se tuvo que realizar en la práctica.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Clock
 \end_layout
 
@@ -2260,7 +2260,7 @@ CD4046
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Sobre Rango Dinámico
 \end_layout
 
@@ -2371,7 +2371,7 @@ Vale aclarar que para el cáculo se consideró
  (se sustrae el doble del piso de ruido).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Esquemático Final
 \end_layout
 
@@ -2538,7 +2538,7 @@ Esquemáticos: Filtros Antialias y Recuperador
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Mediciones
 \end_layout
 
@@ -2561,7 +2561,7 @@ Gauss y Sinc.
  cuanto a amplitud y frecuencia.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Mediciones de Señal Senoidal
 \end_layout
 
@@ -2848,7 +2848,7 @@ Espectro de Señal Digital Modulada
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Mediciones de Señal 
 \begin_inset Formula $\frac{1}{2}$
 \end_inset
@@ -3159,7 +3159,7 @@ Espectro de Señal Digital Modulada
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Mediciones de Señal Sinc
 \end_layout
 
