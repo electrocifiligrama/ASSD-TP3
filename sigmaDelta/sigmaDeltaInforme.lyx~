@@ -95,13 +95,13 @@ En esta parte del artículo se pretenderá diseñar un conversor analógico
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoBASEsincuadros.PNG
-	scale 50
+	scale 70
 
 \end_inset
 
@@ -215,20 +215,20 @@ Delta
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/delta2sigmadelta1.PNG
-	scale 40
+	scale 60
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/delta2sigmadelta2.PNG
-	scale 40
+	scale 60
 
 \end_inset
 
@@ -352,13 +352,13 @@ e matemático para poder calcular la función transferencia del sistema.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/mathModelDiagram.PNG
-	scale 55
+	scale 70
 
 \end_inset
 
@@ -508,13 +508,13 @@ Como se puede observar de la expresión anterior, el sistema presenta una
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/ordenNoiseShaping.PNG
-	scale 55
+	scale 70
 
 \end_inset
 
@@ -668,8 +668,20 @@ Relación con Noise Shaping
 \end_layout
 
 \begin_layout Standard
-Una ventaja notable del oversampling, la cual provoca que el modulador/conversor
- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\end_layout
+
+\end_inset
+
+ Una ventaja notable del oversampling, la cual provoca que el modulador/converso
+r 
 \begin_inset Formula $\sum\triangle$
 \end_inset
 
@@ -739,13 +751,13 @@ Noise Shaping
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/espectroShaped.PNG
-	scale 50
+	scale 70
 
 \end_inset
 
@@ -790,7 +802,19 @@ Reducción de Bits
 \end_layout
 
 \begin_layout Standard
-Como se ha mencionado anteriormente, el conversor/modulador 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+par
+\end_layout
+
+\end_inset
+
+ Como se ha mencionado anteriormente, el conversor/modulador 
 \begin_inset Formula $\sum\triangle$
 \end_inset
 
@@ -1057,13 +1081,13 @@ Simulink
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquemaSIMULINK.PNG
-	scale 55
+	scale 65
 
 \end_inset
 
@@ -1269,10 +1293,6 @@ En cuanto al espectro luego del decimador (color celeste), se nota una respuesta
  efecto posible sobre la decimación en cuestión.
 \end_layout
 
-\begin_layout Subsubsection
-=======
-\end_layout
-
 \begin_layout Standard
 En fin, claramente se puede visualizar el 
 \begin_inset Quotes eld
@@ -1470,13 +1490,13 @@ r los distintos bloques representativos del circuito mediante la siguiente
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoBASE.png
-	scale 55
+	scale 70
 
 \end_inset
 
@@ -1652,13 +1672,13 @@ Para analizar el bloque que integra la diferencia entre la entrada y la
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/integradorConRes.PNG
-	scale 40
+	scale 60
 
 \end_inset
 
@@ -1800,7 +1820,7 @@ Para realizar un integrador con capacitores switcheados se debe tener en
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1853,13 +1873,13 @@ Incorporando esto al integrador, se propone el siguiente diseño para el
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/intFinal.PNG
-	scale 40
+	scale 60
 
 \end_inset
 
@@ -2381,13 +2401,13 @@ A continuación se presentan imagenes de los circuitos esquemáticos que compone
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoGeneral.PNG
-	scale 30
+	scale 50
 
 \end_inset
 
@@ -2416,20 +2436,20 @@ Esquemático General
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoIntegrador.PNG
-	scale 30
+	scale 50
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoGenVref.PNG
-	scale 25
+	scale 40
 
 \end_inset
 
@@ -2462,20 +2482,20 @@ Esquemáticos: Integrador y Cuantizador - Generador de
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoDiff.PNG
-	scale 30
+	scale 40
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoClock.PNG
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -2504,13 +2524,13 @@ Esquemáticos: Diferenciador - Clock
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenesSIGMADELTA/esquematicoFiltros.PNG
-	scale 30
+	scale 40
 
 \end_inset
 

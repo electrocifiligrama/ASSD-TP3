@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -58,16 +58,16 @@
 \color #008000
 \end_index
 \leftmargin 1.9cm
-\topmargin 2.5cm
+\topmargin 1.9cm
 \rightmargin 1.9cm
-\bottommargin 4.2cm
+\bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
 \defskip smallskip
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style french
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -92,9 +92,8 @@ filename "cover.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "placaADA.lyx"
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -104,7 +103,7 @@ filename "placaADA.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "filtros/filtros2.lyx"
+filename "placaADA.lyx"
 
 \end_inset
 

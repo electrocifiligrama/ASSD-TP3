@@ -92,9 +92,8 @@ filename "cover.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "placaADA.lyx"
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -104,7 +103,7 @@ filename "placaADA.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "filtros/filtros2.lyx"
+filename "placaADA.lyx"
 
 \end_inset
 
@@ -125,6 +124,16 @@ filename "C:/Users/lugfe/Documents/GitHub/ASSD/ASSD-TP3/SAR/Informe/SAR.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "moduladorDelta.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/lugfe/Documents/GitHub/ASSD/ASSD-TP3/sigmaDelta/sigmaDeltaInforme.lyx"
 
 \end_inset
 
