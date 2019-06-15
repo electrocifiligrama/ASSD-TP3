@@ -137,9 +137,9 @@ Esquemático de la placa ADA.
 \end_layout
 
 \begin_layout Standard
-A la entrada de la placa se tiene un filtro antialias implementado con un
- MAX297, seguido del siguiente circuito que monta la señal sobre una continua
- de 
+A la entrada de la placa se tiene un filtro antialias (FAA) implementado
+ con un MAX297, seguido del siguiente circuito que monta la señal sobre
+ una continua de 
 \begin_inset Formula $2.5V$
 \end_inset
 
@@ -185,6 +185,34 @@ La idea del anterior circuito es que la entrada esté limitada al rango
 
 , ya que es la limitación que tienen las etapas subsiguientes.
  La función de los diodos es evitar que la señal supere el rango permitido.
+ Seguido de eso, la señal ingresa a un Sample & Hold, para que se mantenga
+ el valor el tiempo de conversión necesario tal que se puedan realizar las
+ conversiones.
+ Los conversores son entonces, un ADC0809, un SAR y un modulador Delta,
+ estos últimos implementados en una FPGA; y un Sigma Delta implementado
+ en un placa separada.
+ El conversor a utilizar se elige mediante jumpers, que colocan al conversor
+ no elegido en un estado de alta impedancia.
+\end_layout
+
+\begin_layout Standard
+La salida de estos conversores está conectada a un DAC0800 de manera de
+ ser recuperada analógicamente, y finalemente por un filtro recuperador
+ (FR).
+\end_layout
+
+\begin_layout Standard
+Además se usaron reguladores de tensión para las alimentaciones de los integrado
+s (
+\begin_inset Formula $\pm15V$
+\end_inset
+
+ y 
+\begin_inset Formula $\pm5V$
+\end_inset
+
+) de manera que la tensión sea lo más estable posible, en particular para
+ proteger al MAX297.
 \end_layout
 
 \end_body

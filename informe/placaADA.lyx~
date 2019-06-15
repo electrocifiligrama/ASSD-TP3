@@ -79,5 +79,141 @@
 Placa ADA
 \end_layout
 
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+El objetivo del trabajo práctico es el estudio y la implementación de diversos
+ conversores AD (analógico a digital) y DA (digital a analógico): el SAR
+ (conversor de aproximaciones sucesivas), modulador Delta y el conversor
+ y modulador Sigma-Delta.
+ Los dos primeros se implementaron en la placa mencionada.
+\end_layout
+
+\begin_layout Subsection
+Diseño
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra el circuito utilizado para la placa principal
+ ADA.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ada.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemático de la placa ADA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A la entrada de la placa se tiene un filtro antialias (FAA) implementado
+ con un MAX297, seguido del siguiente circuito que monta la señal sobre
+ una continua de 
+\begin_inset Formula $2.5V$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/offset.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapa de offset.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+La idea del anterior circuito es que la entrada esté limitada al rango 
+\begin_inset Formula $0V-5V$
+\end_inset
+
+, ya que es la limitación que tienen las etapas subsiguientes.
+ La función de los diodos es evitar que la señal supere el rango permitido.
+ Seguido de eso, la señal ingresa a un Sample & Hold, para que se mantenga
+ el valor el tiempo de conversión necesario tal que se puedan realizar las
+ conversiones.
+ Los conversores son entonces, un ADC0809, un SAR y un modulador Delta,
+ estos últimos implementados en una FPGA; y un Sigma Delta implementado
+ en un placa separada.
+ El conversor a utilizar se elige mediante jumpers, que colocan al conversor
+ no elegido en un estado de alta impedancia.
+\end_layout
+
+\begin_layout Standard
+La salida de estos conversores está conectada a un DAC0800 de manera de
+ ser recuperada analógicamente, y finalemente por un filtro recuperador
+ (FR).
+\end_layout
+
+\begin_layout Standard
+Además se usaron reguladores de tensión para las alimentaciones de los integrado
+s (
+\begin_inset Formula $\pm15V$
+\end_inset
+
+ y 
+\begin_inset Formula $\pm5V$
+\end_inset
+
+) de manera que la tensión sea lo más estable posible, en particular para
+ proteger al MAX297.que es esto?
+\end_layout
+
 \end_body
 \end_document
