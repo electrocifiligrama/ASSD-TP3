@@ -4,6 +4,22 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "LE",
+					"strict" : false
+				},
+				{
+					"name" : "New_start",
+					"strict" : false
+				},
+				{
+					"name" : "Clock_output",
+					"strict" : false
+				},
+				{
+					"name" : "SH",
+					"strict" : false
+				},
+				{
 					"name" : "Result[7]",
 					"strict" : false
 				},
@@ -36,11 +52,55 @@
 					"strict" : false
 				},
 				{
+					"name" : "Clk_50MHz",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
+					"strict" : false
+				},
+				{
 					"name" : "Sel_Conversor",
 					"strict" : false
 				},
 				{
 					"name" : "Output_Enable",
+					"strict" : false
+				},
+				{
+					"name" : "Comparador",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[5]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[4]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_switches[2]",
 					"strict" : false
 				}
 			]

@@ -29,7 +29,7 @@ end
 
 always @(posedge clk_in) begin
   desired_clk <= (MIN_CLK_STEP*freq_param)+F_CLK_MIN;
-  edges_per_on_cycle <= 1/(desired_clk*(2/50000000));
+  edges_per_on_cycle <= 50000000/(desired_clk*2);
   if (counter < (edges_per_on_cycle-1)) begin //Aumenta el contador con cada flanco ascendente
     counter <= counter +1;
   end

@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at sar.v(20): always construct contains both blocking and non-blocking assignments File: C:/Users/HP/Documents/ITBA/Tercer Año/ASSD/TPs/ASSD-TP3/Quartus/sar.v Line: 20
-Warning (10273): Verilog HDL warning at outputenabler.v(13): extended using "x" or "z" File: C:/Users/HP/Documents/ITBA/Tercer Año/ASSD/TPs/ASSD-TP3/Quartus/outputenabler.v Line: 13
+Warning (10268): Verilog HDL information at SAR.v(20): always construct contains both blocking and non-blocking assignments File: C:/Users/HP/Documents/ITBA/Tercer Año/ASSD/TPs/ASSD-TP3/Quartus/SAR.v Line: 20
+Warning (10273): Verilog HDL warning at OutputEnabler.v(13): extended using "x" or "z" File: C:/Users/HP/Documents/ITBA/Tercer Año/ASSD/TPs/ASSD-TP3/Quartus/OutputEnabler.v Line: 13
