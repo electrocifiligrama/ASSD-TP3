@@ -68,13 +68,13 @@ set_location_assignment PIN_A4 -to Result[3]
 set_location_assignment PIN_B3 -to Result[2]
 set_location_assignment PIN_A2 -to Result[1]
 set_location_assignment PIN_D3 -to Result[0]
-set_location_assignment PIN_T10 -to Clock_output
+set_location_assignment PIN_F9 -to Clock_output
 set_location_assignment PIN_P11 -to LE
 set_location_assignment PIN_E11 -to New_start
 set_location_assignment PIN_A12 -to SH
 set_location_assignment PIN_E7 -to Comparador
-set_location_assignment PIN_C11 -to EOC_integrado
-set_location_assignment PIN_B9 -to Output_Enable
+set_location_assignment PIN_T10 -to EOC_integrado
+set_location_assignment PIN_C11 -to Output_Enable
 set_location_assignment PIN_D12 -to Sel_Conversor
 set_location_assignment PIN_N12 -to Start
 set_global_assignment -name VERILOG_FILE up_counter_mod34.v

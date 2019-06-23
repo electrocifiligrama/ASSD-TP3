@@ -2780,3 +2780,9 @@
 [0608/104744:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
 [0608/104744:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
 [0608/104744:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145241:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145242:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145246:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145247:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145247:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0621/145249:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
