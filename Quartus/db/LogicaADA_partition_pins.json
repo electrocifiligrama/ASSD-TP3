@@ -52,7 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Clk_50MHz",
+					"name" : "EOC_integrado",
+					"strict" : false
+				},
+				{
+					"name" : "Output_Enable",
 					"strict" : false
 				},
 				{
@@ -60,11 +64,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "Sel_Conversor",
+					"name" : "Clk_50MHz",
 					"strict" : false
 				},
 				{
-					"name" : "Output_Enable",
+					"name" : "Sel_Conversor",
 					"strict" : false
 				},
 				{

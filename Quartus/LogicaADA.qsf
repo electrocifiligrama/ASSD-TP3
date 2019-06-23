@@ -81,12 +81,10 @@ set_global_assignment -name VERILOG_FILE up_counter_mod34.v
 set_global_assignment -name VERILOG_FILE SAR.v
 set_global_assignment -name VERILOG_FILE PseudoPLL.v
 set_global_assignment -name VERILOG_FILE OutputEnabler.v
-set_global_assignment -name VERILOG_FILE NewStart.v
 set_global_assignment -name VERILOG_FILE MuxSalida.v
 set_global_assignment -name VERILOG_FILE mux2.v
 set_global_assignment -name VERILOG_FILE DeltaMod.v
 set_global_assignment -name BDF_FILE main.bdf
-set_global_assignment -name VERILOG_FILE Sustain.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
