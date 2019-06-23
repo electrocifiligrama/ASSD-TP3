@@ -1,5 +1,5 @@
 Fitter report for LogicaADA
-Fri Jun 21 14:30:40 2019
+Sun Jun 23 14:52:23 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 21 14:30:40 2019       ;
+; Fitter Status                      ; Successful - Sun Jun 23 14:52:23 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; LogicaADA                                   ;
 ; Top-level Entity Name              ; main                                        ;
@@ -161,7 +161,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.0%      ;
+;     Processor 2            ;   1.6%      ;
 +----------------------------+-------------+
 
 
@@ -1452,18 +1452,18 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
     Info (170196): Router estimated peak interconnect usage is 7% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.04 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:06
+Info (11888): Total time spent on timing analysis during the Fitter is 1.13 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/HP/Documents/ITBA/Tercer Año/ASSD/TPs/ASSD-TP3/Quartus/output_files/LogicaADA.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5297 megabytes
-    Info: Processing ended: Fri Jun 21 14:30:42 2019
-    Info: Elapsed time: 00:00:32
+    Info: Peak virtual memory: 5298 megabytes
+    Info: Processing ended: Sun Jun 23 14:52:24 2019
+    Info: Elapsed time: 00:00:37
     Info: Total CPU time (on all processors): 00:00:29
 
 
